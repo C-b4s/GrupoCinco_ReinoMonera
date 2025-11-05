@@ -1,5 +1,6 @@
 # Archivos de compilación para el .gitignore
 *.class
+*.bin
 bin/
 out/
 

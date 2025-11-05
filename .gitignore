@@ -1,0 +1,7 @@
+# Archivos de compilación para el .gitignore
+*.class
+bin/
+out/
+
+# Archivos de Visual Studio Code
+.vscode/

@@ -1,0 +1,26 @@
+Clase Microbiologo extend Personas 
+//Atributos 
+nombre 
+List<bacterias>
+//Metodos
+registrarBacteria(BacteriusSimulacion  b)
+modificarCondiciones(String nombreBacteria,double ph,double temperatura)
+public void iniciarSimulacion(Simulacion simulacion);
+observarResultados( Simulacion simulacion)
+
+
+
+
+
+***SUGERENCIA: Nueva clase que para la simulacion de bacterias contiene:
+- Estadísticas agregadas
+- Cambios en condiciones
+- Tipos de interacción observados
+
+pkBacteriusSimulacion
+Clase Simulacion
+//Atributos
+List<BacteriusSimulacion> bacterias
+//Metodos
+mostrarResumen()
+ejecutar()

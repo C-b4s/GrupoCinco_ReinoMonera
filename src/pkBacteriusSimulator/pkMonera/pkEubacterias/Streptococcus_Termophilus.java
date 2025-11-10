@@ -1,5 +1,5 @@
 package pkBacteriusSimulator.pkMonera.pkEubacterias;
 
-public class Streptococcus {
+public class Streptococcus_Termophilus {
 
 }

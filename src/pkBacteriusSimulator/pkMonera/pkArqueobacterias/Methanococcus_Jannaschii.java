@@ -1,5 +1,5 @@
 package pkBacteriusSimulator.pkMonera.pkArqueobacterias;
 
-public class Methanococcus {
+public class Methanococcus_Jannaschii {
 
 }

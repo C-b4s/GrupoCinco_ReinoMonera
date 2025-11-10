@@ -1,5 +1,8 @@
+import pkBacteriusSimulator.BacteriusSimulator;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        BacteriusSimulator controlador =new BacteriusSimulator();
+        
     }
 }

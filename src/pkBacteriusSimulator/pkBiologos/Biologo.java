@@ -48,9 +48,9 @@ public abstract class Biologo {
 
     }
     
-    public String generarInforme(String bacteria, Double tiempoAnalisis, String laboratorio){    
-        return "Informe de " + bacteria + ": analizada por " + nombre + "en " + laboratorio +
-        " durante " + tiempoAnalisis + "horas";
+    public void generarInforme(String bacteria, Double tiempoAnalisis, String laboratorio){    
+        System.out.println("Informe de " + bacteria + ": analizada por " + nombre + "en " + laboratorio +
+        " durante " + tiempoAnalisis + "horas");
     }
 
 

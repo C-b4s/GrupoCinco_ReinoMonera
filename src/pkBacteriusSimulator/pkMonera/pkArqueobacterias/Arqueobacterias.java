@@ -17,7 +17,7 @@ public abstract class Arqueobacterias {
     }
 
     public Boolean adaptarseCondicionesAnaerobicas(){
-        return true;
+        return clasificacionArqueo.equalsIgnoreCase("metanogena");
     }
 
 }

@@ -31,7 +31,13 @@ public abstract class Eubacterias {
     }
 
     public Boolean reaccionarAntibiotico(String antibiotico){
+    if(gram.equalsIgnoreCase("positivo") && antibiotico.equalsIgnoreCase("penicilina")){
+        return false;
+    }   else if( gram.equalsIgnoreCase("negativo") && antibiotico.equalsIgnoreCase("penicilina")){
         return true;
+    }else{
+        return false;
+    }
     }
 
 }

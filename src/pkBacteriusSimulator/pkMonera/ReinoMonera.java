@@ -74,7 +74,13 @@ public abstract class ReinoMonera {
     }
 
     public String alimentarse (String comida){
-    return "";        
+        if (comida.equalsIgnoreCase("glucosa")){
+            return nombreCientifico + "obtiene energía fermentando glucosa";
+        } else if (comida.equalsIgnoreCase("C02  y H2")){
+            return nombreCientifico + "realizar metabolismo metanogénico.";
+        } else {
+            return nombreCientifico + "no puede metabolizar " + comida + " .";
+        }
     }
 
 }

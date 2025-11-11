@@ -215,11 +215,12 @@
                     <mxGeometry x="1110" y="640" width="170" height="196" as="geometry"/>
                 </mxCell>
                 <mxCell id="86" value="-nivelToxina:Double" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="85" vertex="1">
-                    <mxGeometry y="30" width="170" height="26" as="geometry"/>
+                    <mxGeometry y="30" width="183.36" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="87" value="-estadoOxigeno:Boolean" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="85" vertex="1">
-                    <mxGeometry y="56" width="170" height="26" as="geometry"/>
+                    <mxGeometry y="56" width="183.36" height="26" as="geometry"/>
                 </mxCell>
+<<<<<<< HEAD
                 <mxCell id="257" value="-ambienteSinOxigeno :Boolean" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="85">
                     <mxGeometry y="82" width="170" height="38" as="geometry"/>
                 </mxCell>
@@ -231,6 +232,13 @@
                 </mxCell>
                 <mxCell id="264" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;+activarToxina(): Void&lt;/span&gt;" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="85">
                     <mxGeometry y="170" width="170" height="26" as="geometry"/>
+=======
+                <mxCell id="88" value="" style="line;strokeWidth=1;fillColor=#dae8fc;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#6c8ebf;" parent="85" vertex="1">
+                    <mxGeometry y="82" width="183.36" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="89" value="+cultivarSinOxigeno():Boolean" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="85" vertex="1">
+                    <mxGeometry y="90" width="183.36" height="26" as="geometry"/>
+>>>>>>> e6ee4ceb1814ee3b5a95628cbc5370ac3c708e70
                 </mxCell>
                 <mxCell id="105" value="Lactobacillus acidophilus" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
                     <mxGeometry x="1290" y="630" width="180" height="184" as="geometry"/>

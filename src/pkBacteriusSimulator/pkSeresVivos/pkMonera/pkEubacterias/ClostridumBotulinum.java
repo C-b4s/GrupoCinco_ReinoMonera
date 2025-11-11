@@ -1,12 +1,37 @@
 package pkBacteriusSimulator.pkSeresVivos.pkMonera.pkEubacterias;
 
-public class ClostridumBotulinum extends TincioGram{
+public class ClostridumBotulinum {
     
+    // Clase Bacteria Clostridum Botulinum
+
     // Atributos  
     private boolean          toxinaActiva;
     private boolean          ambienteSinOxigeno;
     private double           nivelToxina;
 
+    public double getNivelToxina() {
+        return nivelToxina;
+    }
+
+    public void setNivelToxina(double nivelToxina) {
+        this.nivelToxina = nivelToxina;
+    }
+
+    public boolean isAmbienteSinOxigeno() {
+        return ambienteSinOxigeno;
+    }
+
+    public void setAmbienteSinOxigeno(boolean ambienteSinOxigeno) {
+        this.ambienteSinOxigeno = ambienteSinOxigeno;
+    }
+
+    public boolean isToxinaActiva() {
+        return toxinaActiva;
+    }
+
+    public void setToxinaActiva(boolean toxinaActiva) {
+        this.toxinaActiva = toxinaActiva;
+    }
     // Constructores
    
     public ClostridumBotulinum() {

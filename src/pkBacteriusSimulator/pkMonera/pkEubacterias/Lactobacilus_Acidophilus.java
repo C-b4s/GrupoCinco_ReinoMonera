@@ -1,6 +1,6 @@
 package pkBacteriusSimulator.pkMonera.pkEubacterias;
 
-public class Lactobacilus_Acidophilus extends Eubacterias{
+public class Lactobacilus_Acidophilus extends Eubacteria{
 private String tipoAzucarFermentado;
 private Double nivelProduccionAcidoLact;
 private Double consumoAzucares;

@@ -35,6 +35,11 @@ public abstract class ReinoMonera {
 
     
 
+    public ReinoMonera(String nombreCientifico2, String string, String habitat2) {
+        //TODO Auto-generated constructor stub
+    }
+
+
     public String getNombreCientifico() {
         return nombreCientifico;
     }

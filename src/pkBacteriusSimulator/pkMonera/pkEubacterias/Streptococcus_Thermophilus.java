@@ -1,27 +1,20 @@
 package pkBacteriusSimulator.pkMonera.pkEubacterias;
 
 
-
-public class Streptococcus_Thermophilus extends Eubacterias {
+public class Streptococcus_Thermophilus extends Eubacteria {
     private Double nivelAcidoLactico;
     private Double consumoAzucares;
 
     
     //Constructores:
-    public Streptococcus_Thermophilus() {
-        super("Streptococcus Thermophilus", "productos lacteos fermentados", "positivo");
-        this.setNivelAcidoLactico(nivelAcidoLactico);
-        this.setConsumoAzucares(consumoAzucares);
-    }
-
-    public Streptococcus_Thermophilus(Double nivelAcidoLactico, Double consumoAzucares){
-        super("Streptococcus Thermophilus", "productos lacteos fermentados", "positivo");
-        this.setNivelAcidoLactico(nivelAcidoLactico);
-        this.setConsumoAzucares(consumoAzucares);
+    public Streptococcus_Thermophilus(Builder builder) {
+        super(builder);
+        this.nivelAcidoLactico = builder.nivelAcidoLactico;
+        this.consumoAzucares = builder.consumoAzucares;
     }
 
 
-    //Gtetters y Setters:
+    //Getters y Setters:
     public Double getNivelAcidoLactico() {
         return nivelAcidoLactico;
     }
@@ -56,13 +49,13 @@ public class Streptococcus_Thermophilus extends Eubacterias {
         }
     }
 
-    public String compararFermentacion(Eubacterias otraBacteria, Double azucarOtra, Double acidoOtra){
+    public String compararFermentacion(Eubacteria otraBacteria, Double azucarOtra, Double acidoOtra){
         if (otraBacteria == null || acidoOtra == null || azucarOtra == null){
             String mensajeError = "\n================== ERROR ==================\n";
             mensajeError += "No se puede realizar la operación con parámetros nulos";
             return mensajeError;
         }
-        
+
         if (otraBacteria instanceof Lactobacilus_Acidophilus lactobacillus1){
             acidoOtra = lactobacillus1.getNivelProduccionAcidoLact();
             azucarOtra = lactobacillus1.getConsumoAzucares();
@@ -91,6 +84,35 @@ public class Streptococcus_Thermophilus extends Eubacterias {
         }
 
         return resultado;
+
+    }
+
+    public static class Builder extends Eubacteria.Builder<Builder> {
+        private Double nivelAcidoLactico;
+         private Double consumoAzucares;
+
+        public Builder nivelAcidoLactico(Double nivel) { 
+            this.nivelAcidoLactico = nivel; 
+            return this; 
+         }
+
+        public Builder consumoAzucares(Double consumo) { 
+            this.consumoAzucares = consumo; 
+            return this; 
+         }
+
+        @Override
+        protected Builder self() { 
+            return this; 
+        }
+
+        public Streptococcus_Thermophilus build() {
+        if (this.nivelAcidoLactico == null || this.consumoAzucares == null) {
+            throw new IllegalStateException("Los valores de fermentación no pueden ser nulos");
+        }
+        return new Streptococcus_Thermophilus(this);
+    }
+
 
     }
 

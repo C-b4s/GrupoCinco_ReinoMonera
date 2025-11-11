@@ -3,33 +3,37 @@ package pkBacteriusSimulator.pkMonera;
 public abstract class ReinoMonera {
 
     private String nombreCientifico;
-    private String tipoCelula;
     private String habitat;
-    private String reproduccion;
     private Double tamanio;
     private Double phOptimo;
     private Double temperaturaOptima;
     private Boolean esPatogeno;
-    private Boolean movilidad;
-    private Boolean anaerobioStricto;
-    
-    
-    
+    private Boolean anaerobioEstricto;
 
-    public ReinoMonera (String nombreCientifico, String tipoCelula, String habitat,
-                        String reproduccion, Double tamanio, Double phOptimo, Double temperaturaOptima,
-                        Boolean esPatogeno, Boolean movilidad, Boolean anaerobioStricto){
+    public ReinoMonera (String nombreCientifico, String habitat,
+                        Double tamanio, Double phOptimo, Double temperaturaOptima,
+                        Boolean esPatogeno, Boolean anaerobioStricto){
         this.nombreCientifico = nombreCientifico;
-        this.tipoCelula = tipoCelula;
         this.habitat = habitat;
-        this.reproduccion = reproduccion;
         this.tamanio = tamanio;
-        this.phOptimo = phOptimo;
+        this.phOptimo = phOptimo;   
         this.temperaturaOptima = temperaturaOptima;
         this.esPatogeno = esPatogeno;
-        this.movilidad = movilidad;
-        this.anaerobioStricto = anaerobioStricto;
+        this.anaerobioEstricto = anaerobioStricto;
     }
+
+    
+    protected ReinoMonera(Builder <?> builder) {
+        this.nombreCientifico = builder.nombreCientifico;
+        this.habitat = builder.habitat;
+        this.tamanio = builder.tamanio;
+        this.phOptimo = builder.phOptimo;
+        this.temperaturaOptima = builder.temperaturaOptima;
+        this.esPatogeno = builder.esPatogeno;
+        this.anaerobioEstricto = builder.anaerobioEstricto;
+    }
+
+    
 
     public String getNombreCientifico() {
         return nombreCientifico;
@@ -42,16 +46,6 @@ public abstract class ReinoMonera {
             System.out.println("El nombre cientifico no puede estar vacio");
     }
 
-    public String getTipoCelula() {
-        return tipoCelula;
-    }
-    public void setTipoCelula(String tipoCelula) {
-        if (tipoCelula.equalsIgnoreCase("Procariota") || tipoCelula.equalsIgnoreCase("Eucariota"))
-            this.tipoCelula = tipoCelula;
-        else
-            System.out.println("\n" + "================== ERROR ==================\n");
-            System.out.println("El tipo de celula debe ser Procariota o Eucariota");
-    }
     public Double getTamaño() {
         return tamanio;
     }
@@ -74,18 +68,6 @@ public abstract class ReinoMonera {
             System.out.println("El valor de esPatogeno no puede ser nulo");
     }
 
-    public Boolean getMovilidad() {
-        return movilidad;
-    }
-
-    public void setMovilidad(Boolean movilidad) {
-        if (movilidad != null)
-            this.movilidad = movilidad;
-        else
-            System.out.println("\n" + "================== ERROR ==================\n");
-            System.out.println("El valor de movilidad no puede ser nulo");
-    }
-
     public String getHabitat() {
         return habitat;
     }
@@ -100,28 +82,16 @@ public abstract class ReinoMonera {
     }
 
     public Boolean getAnaerobioStricto() {
-        return anaerobioStricto;
+        return anaerobioEstricto;
     }
 
     public void setAnaerobioStricto(Boolean anaerobioStricto) {
         if (anaerobioStricto != null)
-            this.anaerobioStricto = anaerobioStricto;
+            this.anaerobioEstricto = anaerobioStricto;
         else
             System.out.println("\n" + "================== ERROR ==================\n");
             System.out.println("El valor de anaerobioStricto no puede ser nulo");
     }
-
-    public String getReproduccion() {
-        return reproduccion;
-    }
-    public void setReproduccion(String reproduccion) {
-        if(reproduccion != null && !reproduccion.isEmpty())
-            this.reproduccion = reproduccion;
-        else
-            System.out.println("\n" + "================== ERROR ==================\n");
-            System.out.println("El tipo de reproduccion no puede estar vacio");
-    }
-
 
     public Double getPhOptimo() {
         return phOptimo;
@@ -156,6 +126,59 @@ public abstract class ReinoMonera {
         } else {
             return nombreCientifico + "no puede metabolizar " + comida + " .";
         }
+    }
+
+      public static abstract class Builder<Monera extends Builder<Monera>> {
+        private String nombreCientifico;
+        private String habitat;
+        private Double tamanio;
+        private Double phOptimo;
+        private Double temperaturaOptima;
+        private Boolean esPatogeno;
+        private Boolean anaerobioEstricto;
+
+        // setters del builder (devuelven T para encadenar)
+        public Monera nombreCientifico(String nombre) { 
+            this.nombreCientifico = nombre; 
+            return self(); 
+        }
+
+
+        public Monera habitat(String hab) { 
+            this.habitat = hab; 
+            return self(); 
+        }
+
+        public Monera tamanio(Double tam) { 
+            this.tamanio = tam; 
+            return self(); 
+        }
+
+        public Monera phOptimo(Double pH) { 
+            this.phOptimo = pH; 
+            return self(); 
+        }
+
+        public Monera temperaturaOptima(Double tempOp) { 
+            this.temperaturaOptima = tempOp; 
+            return self(); 
+        }
+
+        public Monera esPatogeno(Boolean pat) { 
+            this.esPatogeno = pat; 
+            return self(); 
+        }
+
+        public Monera anaerobioEstricto(Boolean anaerobio) { 
+            this.anaerobioEstricto = anaerobio; 
+            return self(); 
+        }
+
+        // subclases deben devolver "self" concreto
+        protected abstract Monera self();
+
+        // subclase concreta implementará build() que retorna la subclase concreta
+        public abstract ReinoMonera build();
     }
 
 }

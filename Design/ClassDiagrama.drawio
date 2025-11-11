@@ -215,10 +215,10 @@
                     <mxGeometry x="1110" y="640" width="170" height="196" as="geometry"/>
                 </mxCell>
                 <mxCell id="86" value="-nivelToxina:Double" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="85" vertex="1">
-                    <mxGeometry y="30" width="170" height="26" as="geometry"/>
+                    <mxGeometry y="30" width="183.36" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="87" value="-estadoOxigeno:Boolean" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="85" vertex="1">
-                    <mxGeometry y="56" width="170" height="26" as="geometry"/>
+                    <mxGeometry y="56" width="183.36" height="26" as="geometry"/>
                 </mxCell>
                 <mxCell id="257" value="-ambienteSinOxigeno :Boolean" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="85">
                     <mxGeometry y="82" width="170" height="38" as="geometry"/>

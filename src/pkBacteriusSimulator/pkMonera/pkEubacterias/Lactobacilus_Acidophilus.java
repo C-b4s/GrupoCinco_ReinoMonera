@@ -3,17 +3,11 @@ package pkBacteriusSimulator.pkMonera.pkEubacterias;
 public class Lactobacilus_Acidophilus extends Eubacterias{
 private String tipoAzucarFermentado;
 private Double nivelProduccionAcidoLact;
-public String getTipoAzucarFermentado() {
-    return tipoAzucarFermentado;
-}
-public void setTipoAzucarFermentado(String tipoAzucarFermentado) {
-    this.tipoAzucarFermentado = tipoAzucarFermentado;
-}
-public Double getNivelProduccionAcidoLact() {
-    return nivelProduccionAcidoLact;
-}
-public void setNivelProduccionAcidoLact(Double nivelProduccionAcidoLact) {
-    this.nivelProduccionAcidoLact = nivelProduccionAcidoLact;
+
+public Lactobacilus_Acidophilus(){
+    super();
+    this.tipoAzucarFermentado ="Glucosa";
+    this.nivelProduccionAcidoLact=0.0;
 }
 
 public Double evaluarEficienciaFermentacion(){
@@ -29,4 +23,17 @@ public String fermentar (String sustrato){
         return getNombreCientifico() + " no puede fermentar "+ sustrato+".";
     }
 }
+public String getTipoAzucarFermentado() {
+    return tipoAzucarFermentado;
+}
+public void setTipoAzucarFermentado(String tipoAzucarFermentado) {
+    this.tipoAzucarFermentado = tipoAzucarFermentado;
+}
+public Double getNivelProduccionAcidoLact() {
+    return nivelProduccionAcidoLact;
+}
+public void setNivelProduccionAcidoLact(Double nivelProduccionAcidoLact) {
+    this.nivelProduccionAcidoLact = nivelProduccionAcidoLact;
+}
+
 }

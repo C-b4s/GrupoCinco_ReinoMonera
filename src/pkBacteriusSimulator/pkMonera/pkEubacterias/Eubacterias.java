@@ -7,6 +7,12 @@ public abstract class Eubacterias extends ReinoMonera{
     private String gram;
     private String clasificacionEubacteria;
     private String tipoFermentacion;
+
+    public Eubacterias(String nombreCientifico, String habitat, String gram){
+        super(nombreCientifico,"Procariota",habitat);
+        this.gram =gram;
+    }
+
     public Boolean getEsProbiotico() {
         return esProbiotico;
     }

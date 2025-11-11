@@ -7,6 +7,7 @@ public abstract class Biologo {
     private String Id;
     private String campoEspecialidad;
     private String laboratorioAsignado;
+
     public String getNombre() {
         return nombre;
     }

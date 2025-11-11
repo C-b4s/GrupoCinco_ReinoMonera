@@ -12,6 +12,15 @@ public abstract class ReinoMonera {
     private String reproduccion;
     private Double phOptimo;
     private Double temperaturaOptima;
+
+    public ReinoMonera(String nombreCientifico,String tipoCelula, String habitat){
+        this.nombreCientifico =nombreCientifico;
+        this.tipoCelula =tipoCelula;
+        this.habitat=habitat;
+    }
+
+
+
     public String getNombreCientifico() {
         return nombreCientifico;
     }

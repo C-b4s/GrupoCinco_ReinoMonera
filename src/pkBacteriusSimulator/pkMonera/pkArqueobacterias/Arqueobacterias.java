@@ -5,6 +5,11 @@ import pkBacteriusSimulator.pkMonera.ReinoMonera;
 public abstract class Arqueobacterias extends ReinoMonera{
     private String resultadoTincioGram;
     private String clasificacionArqueo;
+
+    public Arqueobacterias(String nombreCientifico,String habitat){
+        super(nombreCientifico,"Procariote",habitat);
+    }
+
     public String getResultadoTincioGram() {
         return resultadoTincioGram;
     }

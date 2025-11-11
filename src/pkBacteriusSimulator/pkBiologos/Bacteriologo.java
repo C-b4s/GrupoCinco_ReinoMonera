@@ -1,5 +1,5 @@
 package pkBacteriusSimulator.pkBiologos;
 
-public class Bacteriologo {
+public class Bacteriologo extends Biologo{
 
 }

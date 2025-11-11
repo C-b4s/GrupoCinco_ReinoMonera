@@ -2,15 +2,19 @@ package pkBacteriusSimulator.pkMonera.pkEubacterias;
 
 import pkBacteriusSimulator.pkMonera.ReinoMonera;
 
-public abstract class Eubacterias extends ReinoMonera{
+public abstract class Eubacteria extends ReinoMonera{
     private Boolean esProbiotico;
     private String gram;
     private String clasificacionEubacteria;
     private String tipoFermentacion;
 
-    public Eubacterias(String nombreCientifico, String habitat, String gram){
-        super(nombreCientifico,"Procariota",habitat);
-        this.gram =gram;
+    protected Eubacteria(Builder<?> builder) {
+
+        super(builder);
+        this.tipoFermentacion = builder.tipoFermentacion;
+        this.clasificacionEubacteria = builder.clasificacionEubacteria;
+        this.gram = builder.gram;
+        this.esProbiotico = builder.esProbiotico;
     }
 
     public Boolean getEsProbiotico() {
@@ -37,6 +41,41 @@ public abstract class Eubacterias extends ReinoMonera{
     public void setTipoFermentacion(String tipoFermentacion) {
         this.tipoFermentacion = tipoFermentacion;
     }
+
+
+     public static abstract class Builder<Monera extends Builder<Monera>>
+        extends ReinoMonera.Builder<Monera> {
+        private String tipoFermentacion;
+        private String clasificacionEubacteria;
+        private String gram;
+        private Boolean esProbiotico;
+
+        public Monera tipoFermentacion(String tf) { 
+            this.tipoFermentacion = tf; 
+            return self(); 
+         }
+
+        public Monera clasificacionEubacteria(String c) { 
+            this.clasificacionEubacteria = c; 
+            return self(); 
+        }
+
+        public Monera gram(String g) { 
+            this.gram = g; 
+            return self(); 
+        }
+
+        public Monera esProbiotico(Boolean p) { 
+            this.esProbiotico = p; 
+            return self(); 
+        }
+
+        @Override
+        protected abstract Monera self();
+
+
+    }
+
 
     public Boolean reaccionarAntibiotico(String antibiotico){
     if(gram.equalsIgnoreCase("positivo") && antibiotico.equalsIgnoreCase("penicilina")){

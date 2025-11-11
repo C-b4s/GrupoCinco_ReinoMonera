@@ -32,8 +32,6 @@ public class Halobacterium_Salinarum extends Arqueobacterias {
             case "methanococcus jannaschii":
                 return "Methanococcus jannaschii se adapta mejor a condiciones anaeróbicas, " +
                         "mientras que Halobacterium salinarum destaca en ambientes hipersalinos.";
-            case "streptococcus":
-                return "Halobacterium salinarum presenta mayor tolerancia salina que Streptococcus.";
             default:
                 return "No hay datos suficientes para comparar con " + bacteria + ".";
         }

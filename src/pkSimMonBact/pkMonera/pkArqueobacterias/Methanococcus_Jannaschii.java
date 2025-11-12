@@ -4,9 +4,14 @@ public class Methanococcus_Jannaschii extends Arqueobacterias {
     
     private Double nivelMetanoProducido;
 
-    public Methanococcus_Jannaschii(String nombreCientifico, String habitat, Double nivelMetanoProducido) {
+    public Methanococcus_Jannaschii(String nombreCientifico, String habitat,
+                        Double phOptimo, Double temperaturaOptima,
+                        Boolean esPatogeno, Boolean anaerobioStricto,String resultadoTincioGram,
+                        String clasificacionArqueo, Double nivelMetanoProducido) {
         
-        super(nombreCientifico, habitat);
+        super(nombreCientifico,habitat,
+                    phOptimo,temperaturaOptima,
+                    esPatogeno,anaerobioStricto, resultadoTincioGram, clasificacionArqueo);
         this.nivelMetanoProducido = nivelMetanoProducido;
     }
 

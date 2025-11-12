@@ -50,6 +50,9 @@ public abstract class Biologo {
     public void registrarBacteria(){
 
     }
+
+    // Cada subclase debe decir qué tipo es (BACTERIOLOGO o MICROBIOLOGO)
+    public abstract String obtenerTipo();
     
     public void generarInforme(String bacteria , Double tiempoAnalisis, String laboratorio){    
         System.out.println("================== INFORME ==================");

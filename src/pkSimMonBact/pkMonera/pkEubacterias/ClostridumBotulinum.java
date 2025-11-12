@@ -1,9 +1,6 @@
 package pkSimMonBact.pkMonera.pkEubacterias;
 
 public class ClostridumBotulinum extends Eubacteria{
-    
-    // Clase Bacteria Clostridum Botulinum
-
     // Atributos  
     private boolean          toxinaActiva;
     private boolean          ambienteSinOxigeno;
@@ -32,14 +29,16 @@ public class ClostridumBotulinum extends Eubacteria{
     public void setToxinaActiva(boolean toxinaActiva) {
         this.toxinaActiva = toxinaActiva;
     }
-    // Constructores
-   
-    public ClostridumBotulinum() {
-        super(null);
-    }
 
-    public ClostridumBotulinum(boolean toxinaActiva, boolean ambienteSinOxigeno, double nivelToxina) {
-        super(null);
+    public ClostridumBotulinum(String nombreCientifico, String habitat,
+                        Double phOptimo, Double temperaturaOptima,
+                        Boolean esPatogeno, Boolean anaerobioStricto, Boolean esProbiotico,
+                        String gram, String clasificacionEubacteria, String tipoFermentacion ,
+                        boolean toxinaActiva, boolean ambienteSinOxigeno, double nivelToxina) {
+        super(nombreCientifico, habitat,
+                    phOptimo,temperaturaOptima,
+                    esPatogeno,anaerobioStricto,esProbiotico,
+                    gram, clasificacionEubacteria, tipoFermentacion);
         this.toxinaActiva = true;
         this.ambienteSinOxigeno = true;
         this.nivelToxina = 75.3;

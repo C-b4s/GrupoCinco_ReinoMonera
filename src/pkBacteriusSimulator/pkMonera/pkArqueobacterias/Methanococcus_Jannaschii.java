@@ -7,7 +7,16 @@ public class Methanococcus_Jannaschii extends Arqueobacterias {
     public Methanococcus_Jannaschii(String nombreCientifico, String habitat, Double nivelMetanoProducido) {
         
         super(nombreCientifico, habitat);
-        this.nivelMetanoProducido = nivelMetanoProducido;
+
+        if (nivelMetanoProducido != null && nivelMetanoProducido >= 0.0) {
+            this.nivelMetanoProducido = nivelMetanoProducido;
+        } else {
+            this.nivelMetanoProducido = 0.0;
+            System.err.println("Advertencia: Nivel de Metano inválido. Se asignó 0.0"); 
+        }
+
+        setClasificacionArqueo("metanogena"); 
+        setResultadoTincioGram("Negativo Atípico");
     }
 
     public Double getNivelMetanoProducido() {
@@ -15,7 +24,13 @@ public class Methanococcus_Jannaschii extends Arqueobacterias {
     }
 
     public void setNivelMetanoProducido(Double nivelMetanoProducido) {
-        this.nivelMetanoProducido = nivelMetanoProducido;
+        
+        if (nivelMetanoProducido != null && nivelMetanoProducido >= 0.0) {
+            this.nivelMetanoProducido = nivelMetanoProducido;
+        } else {
+            
+            System.err.println("Error de Asignación: El nivel de metano debe ser positivo y no nulo. Valor actual: " + this.nivelMetanoProducido);
+        }
     }
 
     public Boolean generarMetano(Boolean hayCO2, Boolean hayH2) {
@@ -32,7 +47,7 @@ public class Methanococcus_Jannaschii extends Arqueobacterias {
         switch (bacteria.toLowerCase()) {
             case "halobacterium salinarum":
                
-                if (this.seAdaptaCondicionAnaerobica()) { 
+                if (this.adaptarseCondicionesAnaerobicas()) { 
                     return "Methanococcus jannaschii es un anaerobio estricto y, por ende, " +
                            "más resistente a la ausencia de oxígeno que Halobacterium salinarum (aerobio).";
                 }
@@ -40,10 +55,6 @@ public class Methanococcus_Jannaschii extends Arqueobacterias {
             default:
                 return "Methanococcus jannaschii es altamente resistente a condiciones anaeróbicas.";
         }
-    }
-
-    private Boolean seAdaptaCondicionAnaerobica() {
-        return this.adaptarseCondicionesAnaerobicas();
     }
 
 }

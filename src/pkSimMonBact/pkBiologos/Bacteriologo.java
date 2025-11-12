@@ -39,13 +39,21 @@ public class Bacteriologo extends Biologo {
     } else if (bacteria instanceof ClostridumBotulinum) {
         System.out.println(" Fermentación puede generar toxinas peligrosas.");
     } else {
+<<<<<<< HEAD
         System.out.println("ℹ Tipo de fermentación no especificado para esta bacteria.");
+=======
+        System.out.println(" Tipo de fermentación no especificado para esta bacteria.");
+>>>>>>> 1f1c8f400ae30a2b806a6192773f3eafdf346d48
     }
 }
 
 public void compararFermentacion(ReinoMonera b1, ReinoMonera b2) {
     System.out.println(" Comparando fermentación entre:");
+<<<<<<< HEAD
     System.out.println("" + b1.getNombreCientifico() + " → pH: " + b1.getPhOptimo() + ", Temp: " + b1.getTemperaturaOptima());
+=======
+    System.out.println(" " + b1.getNombreCientifico() + " → pH: " + b1.getPhOptimo() + ", Temp: " + b1.getTemperaturaOptima());
+>>>>>>> 1f1c8f400ae30a2b806a6192773f3eafdf346d48
     System.out.println(" " + b2.getNombreCientifico() + " → pH: " + b2.getPhOptimo() + ", Temp: " + b2.getTemperaturaOptima());
 
     if (b1.getPhOptimo() < b2.getPhOptimo()) {
@@ -56,12 +64,12 @@ public void compararFermentacion(ReinoMonera b1, ReinoMonera b2) {
 }
 
 public void medirProduccionAcidoLactico(ReinoMonera bacteria) {
-    System.out.println("📊 Midiendo ácido láctico en: " + bacteria.getNombreCientifico());
+    System.out.println(" Midiendo ácido láctico en: " + bacteria.getNombreCientifico());
 
     if (bacteria instanceof Lactobacilus_Acidophilus) {
-        System.out.println("✅ Producción alta de ácido láctico esperada.");
+        System.out.println(" Producción alta de ácido láctico esperada.");
     } else {
-        System.out.println("ℹ️ Producción de ácido láctico no característica de esta especie.");
+        System.out.println(" Producción de ácido láctico no característica de esta especie.");
     }
 }
 

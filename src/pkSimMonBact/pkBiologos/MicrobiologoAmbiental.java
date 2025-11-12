@@ -1,4 +1,4 @@
-package pkBacteriusSimulator.pkBiologos;
+package pkSimMonBact.pkBiologos;
 
 public class MicrobiologoAmbiental extends Biologo {
     private String ecosistemaEstudiado;
@@ -6,7 +6,7 @@ public class MicrobiologoAmbiental extends Biologo {
     private String password;
     private String tipoAmbiente;
 
-    public MicrobiologoAmbiental(String nombre, String apellido, Integer edad, String id, String campoEspecialidad, String laboratorioAsignado, String ecosistemaEstudiado, String login, String password, String tipoAmbiente) {
+    public MicrobiologoAmbiental(String nombre, String apellido, Integer edad, Integer id, String campoEspecialidad, String laboratorioAsignado, String ecosistemaEstudiado, String login, String password, String tipoAmbiente) {
         super.setNombre(nombre);
         super.setApellido(apellido);
         super.setEdad(edad);
@@ -40,7 +40,12 @@ public class MicrobiologoAmbiental extends Biologo {
     }
 
     public void setPassword(String password) {
+        password=password.toLowerCase();
+        if(password.equalsIgnoreCase("entrada123"))
         this.password = password;
+        else{
+            System.out.println("Contraseña Incorrecta intentelo nuevamente");
+        }
     }
 
     public String getTipoAmbiente() {

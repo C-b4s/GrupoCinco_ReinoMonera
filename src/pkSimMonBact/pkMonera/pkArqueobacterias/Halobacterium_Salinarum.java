@@ -1,4 +1,4 @@
-package pkBacteriusSimulator.pkMonera.pkArqueobacterias;
+package pkSimMonBact.pkMonera.pkArqueobacterias;
 
 public class Halobacterium_Salinarum extends Arqueobacterias {
 
@@ -14,16 +14,20 @@ public class Halobacterium_Salinarum extends Arqueobacterias {
     }
 
     public void setNivelSalinidadOptima(Double nivelSalinidadOptima) {
-        this.nivelSalinidadOptima = nivelSalinidadOptima;
+        if (nivelSalinidadOptima < 1.5 || nivelSalinidadOptima > 3.7) {
+            System.out.println("El valor de salanidad no es óptimo para que crezca el Halobacterium salinarum.");
+        } else {
+            this.nivelSalinidadOptima = nivelSalinidadOptima;
+        }
     }
 
     public String analizarRespuestaSalina() {
-        if (nivelSalinidadOptima > 3.0) {
-            return "Alta adaptación a ambientes hipersalinos.";
-        } else if (nivelSalinidadOptima >= 1.5) {
-            return "Adaptación moderada a la salinidad.";
+        if (nivelSalinidadOptima <= 3.0 && nivelSalinidadOptima >= 2.0) {
+            return "Ambiente optimo para el crecimiento del Halobacterium Salinarum.";
+        } else if (nivelSalinidadOptima < 2) {
+            return "La bacteria pierde agua y afecta su metabolismo.";
         } else {
-            return "Baja tolerancia a condiciones salinas.";
+            return "Consume mucha energía y su metabolismo se desacelera y se desestabilizan.";
         }
     }
 

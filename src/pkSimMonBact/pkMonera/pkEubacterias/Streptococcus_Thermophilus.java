@@ -1,4 +1,4 @@
-package pkBacteriusSimulator.pkMonera.pkEubacterias;
+package pkSimMonBact.pkMonera.pkEubacterias;
 
 
 public class Streptococcus_Thermophilus extends Eubacteria {

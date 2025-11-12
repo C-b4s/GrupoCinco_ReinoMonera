@@ -8,9 +8,12 @@ import pkSimMonBact.pkMonera.pkEubacterias.Lactobacilus_Acidophilus;
 public class Bacteriologo extends Biologo {
 
     private boolean manejaPatogenosPeligrosos;
+
     private String login;
     private String password;
     private int nivelBioseguridad;
+
+   
 
     public Bacteriologo(String nombre, String apellido, Integer edad, Integer id,String campoEspecialidad, String laboratorioAsignado,boolean manejaPatogenosPeligrosos, String login,String password, int nivelBioseguridad) {
 
@@ -116,6 +119,20 @@ public String identificarPatogeno(ReinoMonera bacteria) {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+     public int getNivelBioseguridad() {
+        return nivelBioseguridad;
+    }
+    public void setNivelBioseguridad(int nivelBioseguridad) {
+        this.nivelBioseguridad = nivelBioseguridad;
+    }
+public boolean isManejaPatogenosPeligrosos() {
+        return manejaPatogenosPeligrosos;
+    }
+
+
+    public void setManejaPatogenosPeligrosos(boolean manejaPatogenosPeligrosos) {
+        this.manejaPatogenosPeligrosos = manejaPatogenosPeligrosos;
     }
 }
 

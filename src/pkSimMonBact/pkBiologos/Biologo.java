@@ -2,12 +2,6 @@ package pkSimMonBact.pkBiologos;
 
 import java.util.Scanner;
 import pkSimMonBact.pkMonera.ReinoMonera;
-import pkSimMonBact.pkMonera.pkArqueobacterias.Methanococcus_Jannaschii;
-import pkSimMonBact.pkMonera.pkEubacterias.Lactobacilus_Acidophilus;
-import pkSimMonBact.pkMonera.pkEubacterias.ClostridumBotulinum;
-
-
-
 public abstract class Biologo {
     Scanner scanner = new Scanner(System.in);
 
@@ -18,6 +12,8 @@ public abstract class Biologo {
     private String campoEspecialidad;
     private String laboratorioAsignado;
     private int contadorBacterias = 0;
+
+ 
 
     public Integer getId() {
         if (Id == null || Id < 0) {
@@ -119,7 +115,15 @@ public abstract class Biologo {
     }
 
     public String obtenerTipo() {
-        // TODO Auto-generated method stub
+        // TODO Auto-generated method stu
         throw new UnsupportedOperationException("Unimplemented method 'obtenerTipo'");
+        
+    }
+       public int getContadorBacterias() {
+        return contadorBacterias;
+    }
+
+    public void setContadorBacterias(int contadorBacterias) {
+        this.contadorBacterias = contadorBacterias;
     }
 }

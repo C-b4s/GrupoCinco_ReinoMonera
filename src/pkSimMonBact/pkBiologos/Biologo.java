@@ -21,49 +21,49 @@ public abstract class Biologo {
 
     public Integer getId() {
         if (Id == null || Id < 0) {
-            System.out.println("⚠️ Advertencia: ID no asignado o inválido.");
+            System.out.println(" Advertencia: ID no asignado o inválido.");
         }
         return Id;
     }
 
     public String getNombre() {
         if (nombre == null || nombre.trim().isEmpty()) {
-            System.out.println("⚠️ Advertencia: Nombre no asignado.");
+            System.out.println(" Advertencia: Nombre no asignado.");
         }
         return nombre;
     }
 
     public String getApellido() {
         if (apellido == null || apellido.trim().isEmpty()) {
-            System.out.println("⚠️ Advertencia: Apellido no asignado.");
+            System.out.println(" Advertencia: Apellido no asignado.");
         }
         return apellido;
     }
 
     public Integer getEdad() {
         if (edad == null || edad < 0) {
-            System.out.println("⚠️ Advertencia: Edad no válida.");
+            System.out.println(" Advertencia: Edad no válida.");
         }
         return edad;
     }
 
     public String getCampoEspecialidad() {
         if (campoEspecialidad == null || campoEspecialidad.trim().isEmpty()) {
-            System.out.println("⚠️ Advertencia: Campo de especialidad no definido.");
+            System.out.println(" Advertencia: Campo de especialidad no definido.");
         }
         return campoEspecialidad;
     }
 
     public String getLaboratorioAsignado() {
         if (laboratorioAsignado == null || laboratorioAsignado.trim().isEmpty()) {
-            System.out.println("⚠️ Advertencia: Laboratorio no asignado.");
+            System.out.println(" Advertencia: Laboratorio no asignado.");
         }
         return laboratorioAsignado;
     }
 
     public void setId(Integer id) {
         if (id == null || id < 0) {
-            System.out.println("❌ Error: El ID debe ser un número positivo.");
+            System.out.println(" Error: El ID debe ser un número positivo.");
         } else {
             this.Id = id;
         }
@@ -71,7 +71,7 @@ public abstract class Biologo {
 
     public void setNombre(String nombre) {
         if (nombre == null || nombre.trim().isEmpty()) {
-            System.out.println("❌ Error: El nombre no puede estar vacío.");
+            System.out.println(" Error: El nombre no puede estar vacío.");
         } else {
             this.nombre = nombre.trim();
         }
@@ -79,7 +79,7 @@ public abstract class Biologo {
 
     public void setApellido(String apellido) {
         if (apellido == null || apellido.trim().isEmpty()) {
-            System.out.println("❌ Error: El apellido no puede estar vacío.");
+            System.out.println(" Error: El apellido no puede estar vacío.");
         } else {
             this.apellido = apellido.trim();
         }
@@ -87,7 +87,7 @@ public abstract class Biologo {
 
     public void setEdad(Integer edad) {
         if (edad == null || edad < 0) {
-            System.out.println("❌ Error: La edad debe ser un número positivo.");
+            System.out.println(" Error: La edad debe ser un número positivo.");
         } else {
             this.edad = edad;
         }
@@ -95,7 +95,7 @@ public abstract class Biologo {
 
     public void setCampoEspecialidad(String campoEspecialidad) {
         if (campoEspecialidad == null || campoEspecialidad.trim().isEmpty()) {
-            System.out.println("❌ Error: El campo de especialidad no puede estar vacío.");
+            System.out.println(" Error: El campo de especialidad no puede estar vacío.");
         } else {
             this.campoEspecialidad = campoEspecialidad.trim();
         }
@@ -103,7 +103,7 @@ public abstract class Biologo {
 
     public void setLaboratorioAsignado(String laboratorioAsignado) {
         if (laboratorioAsignado == null || laboratorioAsignado.trim().isEmpty()) {
-            System.out.println("❌ Error: El laboratorio asignado no puede estar vacío.");
+            System.out.println(" Error: El laboratorio asignado no puede estar vacío.");
         } else {
             this.laboratorioAsignado = laboratorioAsignado.trim();
         }
@@ -128,22 +128,22 @@ public abstract class Biologo {
                 "Lactobacillus acidophilus", "Intestino humano", 0.8, 5.5, 37.0, false, false);
             case 3 -> bacteria = new ClostridumBotulinum(
                 "Clostridium botulinum", "Suelo", 1.0, 7.0, 30.0, true, true);
-            default -> System.out.println("❌ Opción inválida.");
+            default -> System.out.println(" Opción inválida.");
         }
 
         if (bacteria != null) {
             contadorBacterias++;
-            System.out.println("✅ Bacteria registrada: " + bacteria.getNombreCientifico());
-            System.out.println("📊 Total de bacterias registradas: " + contadorBacterias);
+            System.out.println(" Bacteria registrada: " + bacteria.getNombreCientifico());
+            System.out.println(" Total de bacterias registradas: " + contadorBacterias);
         }
     }
 
     public void generarInforme(ReinoMonera bacteria, Double tiempoAnalisis, String laboratorio) {
         System.out.println("========== INFORME DE ANÁLISIS ==========");
-        System.out.printf("🧫 Bacteria: %s%n", bacteria);
-        System.out.printf("⏱️ Tiempo de análisis: %.2f horas%n", tiempoAnalisis);
-        System.out.printf("🏢 Laboratorio: %s%n", laboratorio);
-        System.out.printf("👨‍🔬 Analista: %s %s%n", getNombre(), getApellido());
+        System.out.printf(" Bacteria: %s%n", bacteria);
+        System.out.printf(" Tiempo de análisis: %.2f horas%n", tiempoAnalisis);
+        System.out.printf(" Laboratorio: %s%n", laboratorio);
+        System.out.printf(" Analista: %s %s%n", getNombre(), getApellido());
         System.out.println("=========================================");
     }
 }

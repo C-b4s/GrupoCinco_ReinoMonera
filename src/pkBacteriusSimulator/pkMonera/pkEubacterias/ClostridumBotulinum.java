@@ -1,6 +1,6 @@
 package pkBacteriusSimulator.pkMonera.pkEubacterias;
 
-public class ClostridumBotulinum extends Eubacterias{
+public class ClostridumBotulinum extends Eubacteria{
     
     // Clase Bacteria Clostridum Botulinum
 

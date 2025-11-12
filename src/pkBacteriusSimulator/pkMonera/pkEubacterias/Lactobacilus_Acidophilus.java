@@ -8,7 +8,7 @@ private Double consumoAzucares;
 
 
 public Lactobacilus_Acidophilus(){
-    super("Lactobacilus_Acidophilus", "productos lacteos fermentados", "positivo");
+    super(null);
     this.tipoAzucarFermentado ="Glucosa";
     this.nivelProduccionAcidoLact=0.0;
 }

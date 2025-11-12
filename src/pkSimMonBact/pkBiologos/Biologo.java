@@ -109,38 +109,6 @@ public abstract class Biologo {
         }
     }
 
-<<<<<<< HEAD
-=======
-    public void registrarBacteria() {
-        
-        System.out.println("🔬 Registro de bacteria iniciado...");
-        System.out.println("Ingrese el nombre o código de la bacteria:");
-        System.out.println("1 → Methanococcus jannaschii");
-        System.out.println("2 → Lactobacillus acidophilus");
-        System.out.println("3 → Clostridium botulinum");
-        System.out.print("Opción: ");
-        int opcion = scanner.nextInt();
-
-        ReinoMonera bacteria = null;
-
-        switch (opcion) {
-            case 1 -> bacteria = new Methanococcus_Jannaschii(
-                "Methanococcus jannaschii", "Fosas marinas", 0.0, 6.5, 80.0, false, true);
-            case 2 -> bacteria = new Lactobacilus_Acidophilus(
-                "Lactobacillus acidophilus", "Intestino humano", 0.8, 5.5, 37.0, false, false);
-            case 3 -> bacteria = new ClostridumBotulinum(
-                "Clostridium botulinum", "Suelo", 1.0, 7.0, 30.0, true, true);
-            default -> System.out.println(" Opción inválida.");
-        }
-
-        if (bacteria != null) {
-            contadorBacterias++;
-            System.out.println(" Bacteria registrada: " + bacteria.getNombreCientifico());
-            System.out.println(" Total de bacterias registradas: " + contadorBacterias);
-        }
-    }
-
->>>>>>> 1f1c8f400ae30a2b806a6192773f3eafdf346d48
     public void generarInforme(ReinoMonera bacteria, Double tiempoAnalisis, String laboratorio) {
         System.out.println("========== INFORME DE ANÁLISIS ==========");
         System.out.printf(" Bacteria: %s%n", bacteria);

@@ -1,6 +1,5 @@
 package pkSimMonBact.pkBiologos;
 
-import pkBacteriusSimulator.pkMonera.ReinoMonera;
 
 public abstract class Biologo {
     private String nombre;
@@ -52,7 +51,7 @@ public abstract class Biologo {
 
     }
     
-    public void generarInforme(ReinoMonera bacteria , Double tiempoAnalisis, String laboratorio){    
+    public void generarInforme(String bacteria , Double tiempoAnalisis, String laboratorio){    
         System.out.println("================== INFORME ==================");
         
         

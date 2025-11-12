@@ -8,7 +8,7 @@ public class AppBacteriusSimulator {
     
 
     private void imprimirBienvenida() {
-        System.out.println("🧬 Bienvenido al simulador Bacterius");
+        System.out.println(" Bienvenido al simulador Bacterius");
     System.out.println("=====================================");
 
     }

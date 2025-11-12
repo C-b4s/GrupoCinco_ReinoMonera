@@ -2,9 +2,8 @@ package pkSimMonBact.pkBiologos;
 
 import pkSimMonBact.pkMonera.ReinoMonera;
 import pkSimMonBact.pkMonera.pkEubacterias.ClostridumBotulinum;
-import pkSimMonBact.pkMonera.ReinoMonera;
+
 import pkSimMonBact.pkMonera.pkEubacterias.Lactobacilus_Acidophilus;
-import pkSimMonBact.pkMonera.pkEubacterias.ClostridumBotulinum;
 
 public class Bacteriologo extends Biologo {
 

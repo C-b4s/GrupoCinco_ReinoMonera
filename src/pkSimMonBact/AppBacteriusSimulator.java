@@ -8,7 +8,9 @@ public class AppBacteriusSimulator {
     
 
     private void imprimirBienvenida() {
-        throw new UnsupportedOperationException("Unimplemented method 'imprimirBienvenida'");
+        System.out.println("🧬 Bienvenido al simulador Bacterius");
+    System.out.println("=====================================");
+
     }
 public void inicializar(){
         imprimirBienvenida();

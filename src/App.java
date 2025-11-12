@@ -1,9 +1,9 @@
-import pkSimMonBact.AppBacteriusSimulator;
+import pkSimMonBact.BacteriusSimulatorController;
 
 public class App {
-    public static void main(String[] args) throws Exception {
-        AppBacteriusSimulator simulador = new AppBacteriusSimulator();
-        simulador.inicializar();
-
+    public static void main(String[] args) {
+        // Punto de entrada mínimo: delegar a AppBacteriusSimulator.inicializar()
+        BacteriusSimulatorController controller = new BacteriusSimulatorController();
+        controller.inicializar();
     }
 }

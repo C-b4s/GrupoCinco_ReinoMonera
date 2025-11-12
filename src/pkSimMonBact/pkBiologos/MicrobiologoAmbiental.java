@@ -10,16 +10,21 @@ public class MicrobiologoAmbiental extends Biologo {
     private String tipoAmbiente;
 
     public MicrobiologoAmbiental(String nombre, String apellido, Integer edad, Integer id, String campoEspecialidad, String laboratorioAsignado, String ecosistemaEstudiado, String login, String password, String tipoAmbiente) {
-        super.setNombre(nombre);
+        super.setNombre("Maria");
         super.setApellido(apellido);
         super.setEdad(edad);
         super.setId(id);
         super.setCampoEspecialidad(campoEspecialidad);
         super.setLaboratorioAsignado(laboratorioAsignado);
         this.ecosistemaEstudiado = ecosistemaEstudiado;
-        this.login = login;
-        this.password = password;
+        this.login = "login";
+        this.password = "password";
         this.tipoAmbiente = tipoAmbiente;
+    }
+
+    @Override
+    public String obtenerTipo() {
+        return "MICROBIOLOGO";
     }
 
     public String getEcosistemaEstudiado() {

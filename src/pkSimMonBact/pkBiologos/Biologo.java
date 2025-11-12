@@ -109,6 +109,8 @@ public abstract class Biologo {
         }
     }
 
+<<<<<<< HEAD
+=======
     public void registrarBacteria() {
         
         System.out.println("🔬 Registro de bacteria iniciado...");
@@ -138,6 +140,7 @@ public abstract class Biologo {
         }
     }
 
+>>>>>>> 1f1c8f400ae30a2b806a6192773f3eafdf346d48
     public void generarInforme(ReinoMonera bacteria, Double tiempoAnalisis, String laboratorio) {
         System.out.println("========== INFORME DE ANÁLISIS ==========");
         System.out.printf(" Bacteria: %s%n", bacteria);
@@ -145,5 +148,10 @@ public abstract class Biologo {
         System.out.printf(" Laboratorio: %s%n", laboratorio);
         System.out.printf(" Analista: %s %s%n", getNombre(), getApellido());
         System.out.println("=========================================");
+    }
+
+    public String obtenerTipo() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'obtenerTipo'");
     }
 }

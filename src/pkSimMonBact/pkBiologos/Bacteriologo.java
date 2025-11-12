@@ -39,13 +39,21 @@ public class Bacteriologo extends Biologo {
     } else if (bacteria instanceof ClostridumBotulinum) {
         System.out.println(" Fermentación puede generar toxinas peligrosas.");
     } else {
+<<<<<<< HEAD
+        System.out.println("ℹ Tipo de fermentación no especificado para esta bacteria.");
+=======
         System.out.println(" Tipo de fermentación no especificado para esta bacteria.");
+>>>>>>> 1f1c8f400ae30a2b806a6192773f3eafdf346d48
     }
 }
 
 public void compararFermentacion(ReinoMonera b1, ReinoMonera b2) {
     System.out.println(" Comparando fermentación entre:");
+<<<<<<< HEAD
+    System.out.println("" + b1.getNombreCientifico() + " → pH: " + b1.getPhOptimo() + ", Temp: " + b1.getTemperaturaOptima());
+=======
     System.out.println(" " + b1.getNombreCientifico() + " → pH: " + b1.getPhOptimo() + ", Temp: " + b1.getTemperaturaOptima());
+>>>>>>> 1f1c8f400ae30a2b806a6192773f3eafdf346d48
     System.out.println(" " + b2.getNombreCientifico() + " → pH: " + b2.getPhOptimo() + ", Temp: " + b2.getTemperaturaOptima());
 
     if (b1.getPhOptimo() < b2.getPhOptimo()) {
@@ -83,5 +91,39 @@ public String identificarPatogeno(ReinoMonera bacteria) {
     System.out.println(" Actividad registrada correctamente.");
 }
 
+    public Bacteriologo(String nombre, String apellido, Integer edad, Integer id,
+                        String campoEspecialidad, String laboratorioAsignado,
+                        String login, String password) {
+        super.setNombre("Juan");
+        super.setApellido(apellido);
+        super.setEdad(edad);
+        super.setId(id);
+        super.setCampoEspecialidad(campoEspecialidad);
+        super.setLaboratorioAsignado(laboratorioAsignado);
+        this.login = login;
+        this.password = password;
+    }
 
+    @Override
+    public String obtenerTipo() {
+        return "BACTERIOLOGO";
+    }
+
+    // Getters y setters
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
+

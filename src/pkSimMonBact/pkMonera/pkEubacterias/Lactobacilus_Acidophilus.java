@@ -7,8 +7,15 @@ private Double consumoAzucares;
 
 
 
-public Lactobacilus_Acidophilus(String string, String string2, double d, double e, double f, boolean b, boolean c){
-    super(null);
+public Lactobacilus_Acidophilus(String nombreCientifico, String habitat,
+                        Double phOptimo, Double temperaturaOptima,
+                        Boolean esPatogeno, Boolean anaerobioStricto, Boolean esProbiotico,
+                        String gram, String clasificacionEubacteria, String tipoFermentacion,String tipoAzucarFermentado,
+                        Double nivelProduccionAcidoLact, Double consumoAzucares){
+    super("Lactobacilus Acidophilus", habitat,
+                    phOptimo,temperaturaOptima,
+                    esPatogeno,anaerobioStricto,esProbiotico,
+                    gram, clasificacionEubacteria, tipoFermentacion);
     this.tipoAzucarFermentado ="Glucosa";
     this.nivelProduccionAcidoLact=0.0;
 }

@@ -1,4 +1,7 @@
 package pkSimMonBact.pkBiologos;
+import pkSimMonBact.pkMonera.ReinoMonera;
+import pkSimMonBact.pkMonera.pkArqueobacterias.Halobacterium_Salinarum;
+import pkSimMonBact.pkMonera.pkArqueobacterias.Methanococcus_Jannaschii;
 
 public class MicrobiologoAmbiental extends Biologo {
     private String ecosistemaEstudiado;
@@ -61,10 +64,29 @@ public class MicrobiologoAmbiental extends Biologo {
         this.tipoAmbiente = tipoAmbiente;
     }
 
-    public void simularProduccionMetano(String methanococcus) {
-        System.out.println("Simulando producción de metano por " + methanococcus + " en ambiente " + tipoAmbiente + " del ecosistema " + ecosistemaEstudiado);
-    
+    public void simularProduccionMetano(Methanococcus_Jannaschii bacteria) {
+    System.out.println("🧪 Simulación de producción de metano iniciada...");
+    System.out.println("🔬 Bacteria: " + bacteria.getNombreCientifico());
+    System.out.println("📍 Hábitat: " + bacteria.getHabitat());
+    System.out.println("🌍 Ecosistema estudiado: " + ecosistemaEstudiado);
+    System.out.println("🌡️ Ambiente: " + tipoAmbiente);
+    System.out.println("⚙️ Nivel actual de metano producido: " + bacteria.getNivelMetanoProducido() + " mmol");
+
+    // Simular condiciones
+    boolean hayCO2 = true;
+    boolean hayH2 = true;
+
+    boolean resultado = bacteria.generarMetano(hayCO2, hayH2);
+
+    if (resultado) {
+        System.out.println("✅ Condiciones óptimas detectadas (CO₂ y H₂ presentes).");
+        System.out.println("🔋 Producción de metano exitosa.");
+        System.out.println("📈 Nuevo nivel de metano: " + bacteria.getNivelMetanoProducido() + " mmol");
+    } else {
+        System.out.println("❌ Condiciones insuficientes para generar metano.");
     }
+}
+
 
     public String evaluarCalidadAmbiental(double ph, double temperatura, double salinidad) {
         System.out.println("Evaluando calidad ambiental:");
@@ -75,12 +97,27 @@ public class MicrobiologoAmbiental extends Biologo {
     }
 
     public void evaluarResistenciaAnaerobia(String bacteria) {
-       // registrarBacteria(bacteria); 
+       
         System.out.println("Evaluando resistencia anaerobia de la bacteria: " + bacteria);
     }
 
-    public void analizarRespuestaSalinidad(String halobacterium) {
-        System.out.println("Analizando respuesta a salinidad de: " + halobacterium);
+    public void analizarRespuestaSalinidad(Halobacterium_Salinarum bacteria) {
+    System.out.println("🧪 Análisis de respuesta a salinidad");
+    System.out.println("🔬 Bacteria: " + bacteria.getNombreCientifico());
+    System.out.println("📍 Hábitat: " + bacteria.getHabitat());
+    System.out.println("🌊 Nivel de salinidad óptima: " + bacteria.getNivelSalinidadOptima() + " M");
+    System.out.println("📈 Evaluación: " + bacteria.analizarRespuestaSalina());
+}
+
+    @Override
+    public void generarInforme(ReinoMonera bacteria, Double tiempoAnalisis, String laboratorio) {
+        System.out.println("========== INFORME DE MICROBACTERIOLOGO ==========");
+        System.out.printf("🔬 Bacteria: %s%n", bacteria);
+        System.out.printf("⏱️ Tiempo de análisis: %.2f horas%n", tiempoAnalisis);
+        System.out.printf("🏢 Laboratorio: %s%n", laboratorio);
+        System.out.printf("👨‍🔬 Analista: %s %s (ID: %d)%n", getNombre(), getApellido(), getId());
+        System.out.printf("🧪 Especialidad: %s%n", getCampoEspecialidad());
+        System.out.println("=============================================");
     }
-    // desarrolloo mas de clases a fututro con datos de bacterias
+    
 }

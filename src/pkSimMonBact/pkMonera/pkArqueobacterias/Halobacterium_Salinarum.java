@@ -25,7 +25,7 @@ public class Halobacterium_Salinarum extends Arqueobacterias {
             this.nivelSalinidadOptima = nivelSalinidadOptima;
         }
     }
-
+    
     public String analizarRespuestaSalina() {
         if (nivelSalinidadOptima <= 3.0 && nivelSalinidadOptima >= 2.0) {
             return "Ambiente optimo para el crecimiento del Halobacterium Salinarum.";

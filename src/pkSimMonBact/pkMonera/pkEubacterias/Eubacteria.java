@@ -1,6 +1,6 @@
-package pkBacteriusSimulator.pkMonera.pkEubacterias;
+package pkSimMonBact.pkMonera.pkEubacterias;
 
-import pkBacteriusSimulator.pkMonera.ReinoMonera;
+import pkSimMonBact.pkMonera.ReinoMonera;
 
 public abstract class Eubacteria extends ReinoMonera{
     private Boolean esProbiotico;

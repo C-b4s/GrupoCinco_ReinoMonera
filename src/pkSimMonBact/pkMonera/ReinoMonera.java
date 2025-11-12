@@ -1,4 +1,4 @@
-package pkBacteriusSimulator.pkMonera;
+package pkSimMonBact.pkMonera;
 
 public abstract class ReinoMonera {
 

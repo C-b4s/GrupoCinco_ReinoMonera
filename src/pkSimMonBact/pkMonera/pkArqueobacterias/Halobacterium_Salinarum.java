@@ -1,4 +1,4 @@
-package pkBacteriusSimulator.pkMonera.pkArqueobacterias;
+package pkSimMonBact.pkMonera.pkArqueobacterias;
 
 public class Halobacterium_Salinarum extends Arqueobacterias {
 

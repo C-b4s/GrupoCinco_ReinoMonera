@@ -60,37 +60,37 @@ public class Simulacion {
         }
     }
 
-    private void detectarInteraccion(ReinoMonera b1, ReinoMonera b2) {
-        String nombre1 = b1.getNombreCientifico();
-        String nombre2 = b2.getNombreCientifico();
+   private void detectarInteraccion(ReinoMonera b1, ReinoMonera b2) {
+    String nombre1 = b1.getNombreCientifico().toLowerCase();
+    String nombre2 = b2.getNombreCientifico().toLowerCase();
 
-        // SIMBIOSIS: Lactobacillus + Streptococcus
-        if ((nombre1.contains("Lactobacillus") && nombre2.contains("Streptococcus")) ||
-            (nombre1.contains("Streptococcus") && nombre2.contains("Lactobacillus"))) {
-            registrarInteraccion(nombre1 + " + " + nombre2 + " = SIMBIOSIS ✓ (crecen juntas)");
-            return;
-        }
-
-        // DEPREDACIÓN/INHIBICIÓN: Clostridium inhibe otros
-        if (nombre1.contains("Clostridium") && !nombre2.contains("Clostridium")) {
-            registrarInteraccion(nombre1 + " INHIBE a " + nombre2 + " ✗ (toxina)");
-            return;
-        }
-        if (nombre2.contains("Clostridium") && !nombre1.contains("Clostridium")) {
-            registrarInteraccion(nombre2 + " INHIBE a " + nombre1 + " ✗ (toxina)");
-            return;
-        }
-
-        // COMPETENCIA ejemplo
-        if ((nombre1.contains("Halobacterium") && nombre2.contains("Methanococcus")) ||
-            (nombre1.contains("Methanococcus") && nombre2.contains("Halobacterium"))) {
-            registrarInteraccion(nombre1 + " COMPITE con " + nombre2 + " ⚔️ (recursos limitados)");
-            return;
-        }
-
-        // Por defecto: coexistencia
-        registrarInteraccion(nombre1 + " COEXISTE con " + nombre2 + " → (sin efectos)");
+    // SIMBIOSIS: Lactobacillus + Streptococcus
+    if ((nombre1.contains("lactobacillus acidophilus") && nombre2.contains("streptococcus thermophilus")) ||
+        (nombre1.contains("streptococcus thermophilus") && nombre2.contains("lactobacillus acidophilus"))) {
+        registrarInteraccion(b1.getNombreCientifico() + " + " + b2.getNombreCientifico() + " = SIMBIOSIS (crecen juntas)");
+        return;
     }
+
+    // DEPREDACIÓN / INHIBICIÓN
+    if (nombre1.contains("clostridium botulinum") && !nombre2.contains("clostridium botulinum")) {
+        registrarInteraccion(b1.getNombreCientifico() + " INHIBE a " + b2.getNombreCientifico() + " (toxina)");
+        return;
+    }
+    if (nombre2.contains("clostridium botulinum") && !nombre1.contains("clostridium botulinum")) {
+        registrarInteraccion(b2.getNombreCientifico() + " INHIBE a " + b1.getNombreCientifico() + " (toxina)");
+        return;
+    }
+
+    // COMPETENCIA
+    if ((nombre1.contains("halobacterium salinarum") && nombre2.contains("methanococcus jannaschii")) ||
+        (nombre1.contains("methanococcus jannaschii") && nombre2.contains("halobacterium salinarum"))) {
+        registrarInteraccion(b1.getNombreCientifico() + " COMPITE con " + b2.getNombreCientifico() + " (recursos limitados)");
+        return;
+    }
+
+    // COEXISTENCIA
+    registrarInteraccion(b1.getNombreCientifico() + " COEXISTE con " + b2.getNombreCientifico() + " (sin efectos)");
+}
 
     private void registrarInteraccion(String interaccion) {
         if (totalInteracciones < interaccionesOcurridas.length) {

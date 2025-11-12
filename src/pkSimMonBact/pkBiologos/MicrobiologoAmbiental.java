@@ -1,4 +1,4 @@
-package pkBacteriusSimulator.pkBiologos;
+package pkSimMonBact.pkBiologos;
 
 public class MicrobiologoAmbiental extends Biologo {
     private String ecosistemaEstudiado;

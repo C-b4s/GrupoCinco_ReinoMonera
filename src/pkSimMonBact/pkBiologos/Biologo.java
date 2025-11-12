@@ -1,12 +1,19 @@
-package pkBacteriusSimulator.pkBiologos;
+package pkSimMonBact.pkBiologos;
 
 public abstract class Biologo {
     private String nombre;
     private String apellido;
     private Integer edad;
-    private String Id;
+    private Integer Id;
     private String campoEspecialidad;
     private String laboratorioAsignado;
+    
+    public Integer getId() {
+        return Id;
+    }
+    public void setId(Integer id) {
+        Id = id;
+    }
 
     public String getNombre() {
         return nombre;
@@ -25,12 +32,6 @@ public abstract class Biologo {
     }
     public void setEdad(Integer edad) {
         this.edad = edad;
-    }
-    public String getId() {
-        return Id;
-    }
-    public void setId(String id) {
-        Id = id;
     }
     public String getCampoEspecialidad() {
         return campoEspecialidad;

@@ -1,6 +1,6 @@
-package pkBacteriusSimulator.pkMonera.pkArqueobacterias;
+package pkSimMonBact.pkMonera.pkArqueobacterias;
 
-import pkBacteriusSimulator.pkMonera.ReinoMonera;
+import pkSimMonBact.pkMonera.ReinoMonera;
 
 public abstract class Arqueobacterias extends ReinoMonera{
     private String resultadoTincioGram;

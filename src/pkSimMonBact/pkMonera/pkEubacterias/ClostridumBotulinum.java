@@ -35,12 +35,14 @@ public class ClostridumBotulinum extends Eubacteria{
     // Constructores
    
     public ClostridumBotulinum() {
+        super(null);
     }
 
     public ClostridumBotulinum(boolean toxinaActiva, boolean ambienteSinOxigeno, double nivelToxina) {
-        this.toxinaActiva = toxinaActiva;
-        this.ambienteSinOxigeno = ambienteSinOxigeno;
-        this.nivelToxina = nivelToxina;
+        super(null);
+        this.toxinaActiva = true;
+        this.ambienteSinOxigeno = true;
+        this.nivelToxina = 75.3;
     }
 
     // Métodos
@@ -75,6 +77,7 @@ public class ClostridumBotulinum extends Eubacteria{
         }else {
             System.out.println("Toxina: INACTIVA");
         }
+        
     }
 
     public void desactivarToxina(){

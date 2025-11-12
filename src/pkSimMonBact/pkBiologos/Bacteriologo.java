@@ -1,5 +1,11 @@
 package pkSimMonBact.pkBiologos;
 
+import pkSimMonBact.pkMonera.ReinoMonera;
+import pkSimMonBact.pkMonera.pkEubacterias.ClostridumBotulinum;
+import pkSimMonBact.pkMonera.ReinoMonera;
+import pkSimMonBact.pkMonera.pkEubacterias.Lactobacilus_Acidophilus;
+import pkSimMonBact.pkMonera.pkEubacterias.ClostridumBotulinum;
+
 public class Bacteriologo extends Biologo {
 
     private boolean manejaPatogenosPeligrosos;
@@ -23,58 +29,60 @@ public class Bacteriologo extends Biologo {
     }
 
     
-    public void evaluarFermentacion(String bacteria) {
-        System.out.println("🧫 Evaluando fermentación en: " + bacteria);
-    }
+    public void evaluarFermentacion(ReinoMonera bacteria) {
+    System.out.println("🧫 Evaluando fermentación en: " + bacteria.getNombreCientifico());
+    System.out.println("📍 Hábitat: " + bacteria.getHabitat());
+    System.out.println("🧪 pH óptimo: " + bacteria.getPhOptimo());
+    System.out.println("🌡️ Temperatura óptima: " + bacteria.getTemperaturaOptima() + "°C");
 
-    public void compararFermentacion(String bacteria1, String bacteria2) {
-        System.out.println("🔍 Comparando fermentación entre " + bacteria1 + " y " + bacteria2);
+    if (bacteria instanceof Lactobacilus_Acidophilus) {
+        System.out.println("✅ Fermentación láctica esperada.");
+    } else if (bacteria instanceof ClostridumBotulinum) {
+        System.out.println("⚠️ Fermentación puede generar toxinas peligrosas.");
+    } else {
+        System.out.println("ℹ️ Tipo de fermentación no especificado para esta bacteria.");
     }
+}
 
-    public void medirProduccionAcidoLactico(String bacteria) {
-        System.out.println("📊 Midiendo ácido láctico en: " + bacteria);
-    }
+public void compararFermentacion(ReinoMonera b1, ReinoMonera b2) {
+    System.out.println("🔍 Comparando fermentación entre:");
+    System.out.println("🧫 " + b1.getNombreCientifico() + " → pH: " + b1.getPhOptimo() + ", Temp: " + b1.getTemperaturaOptima());
+    System.out.println("🧫 " + b2.getNombreCientifico() + " → pH: " + b2.getPhOptimo() + ", Temp: " + b2.getTemperaturaOptima());
 
-    public String identificarPatogeno(String bacteria) {
-        return "🦠 Patógeno identificado en " + bacteria + ": Clostridium botulinum";
+    if (b1.getPhOptimo() < b2.getPhOptimo()) {
+        System.out.println("📊 " + b1.getNombreCientifico() + " fermenta mejor en medios más ácidos.");
+    } else {
+        System.out.println("📊 " + b2.getNombreCientifico() + " fermenta mejor en medios más ácidos.");
     }
+}
 
-    public void registrarActividadToxica(String clostridiumB) {
-        System.out.println("☣️ Actividad tóxica registrada para: " + clostridiumB);
-    }
+public void medirProduccionAcidoLactico(ReinoMonera bacteria) {
+    System.out.println("📊 Midiendo ácido láctico en: " + bacteria.getNombreCientifico());
 
-    
-    
-    @Override
-    public void generarInforme(String bacteria, Double tiempoAnalisis, String laboratorio) {
-        System.out.println("========== INFORME DE BACTERIÓLOGO ==========");
-        System.out.printf("🔬 Bacteria: %s%n", bacteria);
-        System.out.printf("⏱️ Tiempo de análisis: %.2f horas%n", tiempoAnalisis);
-        System.out.printf("🏢 Laboratorio: %s%n", laboratorio);
-        System.out.printf("👨‍🔬 Analista: %s %s (ID: %d)%n", getNombre(), getApellido(), getId());
-        System.out.printf("🧪 Especialidad: %s%n", getCampoEspecialidad());
-        System.out.printf("🛡️ Nivel de Bioseguridad: %d%n", nivelBioseguridad);
-        System.out.printf("☣️ Maneja patógenos peligrosos: %s%n", manejaPatogenosPeligrosos ? "Sí" : "No");
-        System.out.println("=============================================");
+    if (bacteria instanceof Lactobacilus_Acidophilus) {
+        System.out.println("✅ Producción alta de ácido láctico esperada.");
+    } else {
+        System.out.println("ℹ️ Producción de ácido láctico no característica de esta especie.");
     }
+}
 
-    public void mostrarCredenciales() {
-        System.out.println("🔐 Usuario: " + login);
-        System.out.println("🔐 Contraseña: " + "*".repeat(password.length()));
+public String identificarPatogeno(ReinoMonera bacteria) {
+    if (bacteria instanceof ClostridumBotulinum && bacteria.getEsPatogeno()) {
+        return "🦠 Patógeno identificado: Clostridium botulinum con toxina activa.";
+    } else if (bacteria.getEsPatogeno()) {
+        return "🦠 Patógeno identificado: " + bacteria.getNombreCientifico();
+    } else {
+        return "✅ " + bacteria.getNombreCientifico() + " no es considerado patógeno.";
     }
+}
+    public void registrarActividadToxica(ClostridumBotulinum bacteria) {
+    System.out.println("☣️ REGISTRO DE ACTIVIDAD TÓXICA");
+    System.out.println("🔬 Bacteria: Clostridium botulinum");
+    System.out.println("🌡️ Ambiente: " + (bacteria.isAmbienteSinOxigeno() ? "ADECUADO (SIN OXÍGENO)" : "INADECUADO (CON OXÍGENO)"));
+    System.out.println("🧪 Toxina: " + (bacteria.isToxinaActiva() ? "ACTIVADA" : "INACTIVA"));
+    System.out.printf("📈 Nivel de toxina: %.2f mmol/L%n", bacteria.getNivelToxina());
+    System.out.println("✅ Actividad registrada correctamente.");
+}
 
-    public String resumenPerfil() {
-        return String.format("""
-            🧪 PERFIL DEL BACTERIÓLOGO
-            Nombre: %s %s
-            Edad: %d
-            ID: %d
-            Especialidad: %s
-            Laboratorio: %s
-            Nivel Bioseguridad: %d
-            Patógenos Peligrosos: %s
-            """, getNombre(), getApellido(), getEdad(), getId(),
-            getCampoEspecialidad(), getLaboratorioAsignado(),
-            nivelBioseguridad, manejaPatogenosPeligrosos ? "Sí" : "No");
-    }
+
 }

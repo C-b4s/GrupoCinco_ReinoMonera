@@ -34,7 +34,7 @@ public class ClostridumBotulinum extends Eubacteria{
     }
     // Constructores
    
-    public ClostridumBotulinum() {
+    public ClostridumBotulinum(String string, String string2, double d, double e, double f, boolean b, boolean c) {
         super(null);
     }
 

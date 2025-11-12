@@ -7,7 +7,7 @@ private Double consumoAzucares;
 
 
 
-public Lactobacilus_Acidophilus(){
+public Lactobacilus_Acidophilus(String string, String string2, double d, double e, double f, boolean b, boolean c){
     super(null);
     this.tipoAzucarFermentado ="Glucosa";
     this.nivelProduccionAcidoLact=0.0;

@@ -1,5 +1,6 @@
 package pkSimMonBact;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import pkSimMonBact.pkBiologos.*;
 import pkSimMonBact.pkMonera.ReinoMonera;
@@ -114,8 +115,8 @@ public class BacteriusSimulatorController {
                         if (idx >= 0 && idx < todas.length) {
                             sim.anadirBacteria(todas[idx]);
                         }
-                    } catch (Exception e) {
-                        // Ignora errores de número
+                    } catch (InputMismatchException e) {
+                        imprimirErrorTipoNoValido();
                     }
                 }
                 
@@ -173,6 +174,12 @@ public class BacteriusSimulatorController {
         System.out.println("Aplicación finalizada");
     }
 
+    private void imprimirErrorTipoNoValido() {
+      System.err.println(ROJO + "\n================== ERROR ==================\n" +
+                           "El tipo de dato ingresado no es vàlido. Por favor, intente nuevamente.\n" + RESET);
+
+    }
+
     private void imprimirErrorOpcionIncorrecta() {
         System.err.println(ROJO + "\n================== ERROR ==================\n" +
                            "Opción incorrecta. Por favor, intente de nuevo.\n" + RESET);
@@ -183,8 +190,15 @@ public class BacteriusSimulatorController {
         System.out.println("\nSeleccione tipo de bacteria:");
         System.out.println("1) Eubacteria");
         System.out.println("2) Arqueobacteria");
+
+        String tipo;
+        do {
         System.out.print("Opción: ");
-        String tipo = sc.nextLine();
+        tipo = sc.nextLine();
+
+        if (!tipo.equals("1") && !tipo.equals("2")) imprimirErrorOpcionIncorrecta();
+        } while (!tipo.equals("1") && !tipo.equals("2" ));
+        
 
         ReinoMonera b = null;
 
@@ -288,7 +302,7 @@ public class BacteriusSimulatorController {
 
         if (b != null) {
             boolean ok = this.registrarBacteria(b);
-            System.out.println(ok ? "Bacteria registrada correctamente." : "Error al registrar bacteria.");
+            System.out.println(ok ? "Bacteria registrada correctamente." : ROJO + "Error al registrar bacteria." + RESET);
         } else {
             System.out.println("Tipo no válido.");
         }

@@ -6,6 +6,7 @@ public class Streptococcus_Thermophilus extends Eubacteria {
     private Double consumoAzucares;
 
     
+<<<<<<< HEAD
     //Constructores:
     public Streptococcus_Thermophilus(String nombreCientifico, String habitat, Double phOptimo, 
                                       Double temperaturaOptima, Boolean esPatogeno, Boolean anaerobioStricto, 
@@ -16,8 +17,20 @@ public class Streptococcus_Thermophilus extends Eubacteria {
               gram, esProbiotico);
         this.nivelAcidoLactico = nivelAcidoLactico;
         this.consumoAzucares = consumoAzucares;
+=======
+    public Streptococcus_Thermophilus (Double nivelAcidoLactico, Double consumoAzucares,
+                                                                        String nombreCientifico, String habitat,
+                                                                        Double phOptimo, Double temperaturaOptima,
+                                                                        Boolean esPatogeno, Boolean anaerobioStricto, Boolean esProbiotico,
+                                                                        String gram, String clasificacionEubacteria, String tipoFermentacion  ){
+        super("Streptococcus Thermophilus", habitat,
+                    phOptimo,temperaturaOptima,
+                    esPatogeno,anaerobioStricto,esProbiotico,
+                    gram, clasificacionEubacteria, tipoFermentacion);
+        this.nivelAcidoLactico=nivelAcidoLactico;
+        this.consumoAzucares =consumoAzucares;
+>>>>>>> b35617688be206933a52badc77316a186febb92f
     }
-
 
     //Getters y Setters:
     public Double getNivelAcidoLactico() {
@@ -90,9 +103,13 @@ public class Streptococcus_Thermophilus extends Eubacteria {
 
         return resultado;
 
+<<<<<<< HEAD
     }
 
     
+=======
+    } 
+>>>>>>> b35617688be206933a52badc77316a186febb92f
 }
 
     

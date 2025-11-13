@@ -7,6 +7,7 @@ private Double consumoAzucares;
 
 
 
+<<<<<<< HEAD
 public Lactobacilus_Acidophilus(String nombreCientifico, String habitat, Double phOptimo, 
                                 Double temperaturaOptima, Boolean esPatogeno, Boolean anaerobioStricto, 
                                 String tipoFermentacion, String clasificacionEubacteria, 
@@ -14,6 +15,17 @@ public Lactobacilus_Acidophilus(String nombreCientifico, String habitat, Double 
     super(nombreCientifico, habitat, phOptimo, temperaturaOptima, 
           esPatogeno, anaerobioStricto, tipoFermentacion, clasificacionEubacteria, 
           gram, esProbiotico);
+=======
+public Lactobacilus_Acidophilus(String nombreCientifico, String habitat,
+                        Double phOptimo, Double temperaturaOptima,
+                        Boolean esPatogeno, Boolean anaerobioStricto, Boolean esProbiotico,
+                        String gram, String clasificacionEubacteria, String tipoFermentacion,String tipoAzucarFermentado,
+                        Double nivelProduccionAcidoLact, Double consumoAzucares){
+    super("Lactobacilus Acidophilus", habitat,
+                    phOptimo,temperaturaOptima,
+                    esPatogeno,anaerobioStricto,esProbiotico,
+                    gram, clasificacionEubacteria, tipoFermentacion);
+>>>>>>> b35617688be206933a52badc77316a186febb92f
     this.tipoAzucarFermentado ="Glucosa";
     this.nivelProduccionAcidoLact=0.0;
 }

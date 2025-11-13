@@ -6,8 +6,14 @@ public abstract class Arqueobacterias extends ReinoMonera{
     private String resultadoTincioGram;
     private String clasificacionArqueo;
 
-    public Arqueobacterias(String nombreCientifico,String habitat){
-        super(nombreCientifico,"Procariote",habitat);
+    public Arqueobacterias(String nombreCientifico, String habitat,
+                        Double phOptimo, Double temperaturaOptima,
+                        Boolean esPatogeno, Boolean anaerobioStricto,String resultadoTincioGram,String clasificacionArqueo){
+        super(nombreCientifico,habitat,
+                    phOptimo,temperaturaOptima,
+                    esPatogeno,anaerobioStricto);
+        this.clasificacionArqueo=clasificacionArqueo;
+        this.resultadoTincioGram=resultadoTincioGram;
     }
 
     public String getResultadoTincioGram() {

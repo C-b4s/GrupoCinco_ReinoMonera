@@ -4,8 +4,13 @@ public class Halobacterium_Salinarum extends Arqueobacterias {
 
     private Double nivelSalinidadOptima;
 
-    public Halobacterium_Salinarum(String nombreCientifico, String habitat, Double nivelSalinidadOptima) {
-        super(nombreCientifico, habitat);
+    public Halobacterium_Salinarum(String nombreCientifico, String habitat,
+                        Double phOptimo, Double temperaturaOptima,
+                        Boolean esPatogeno, Boolean anaerobioStricto
+                        ,String resultadoTincioGram, String clasificacionArqueo, Double nivelSalinidadOptima) {
+        super(nombreCientifico,habitat,
+                    phOptimo,temperaturaOptima,
+                    esPatogeno,anaerobioStricto, resultadoTincioGram, clasificacionArqueo);
         this.nivelSalinidadOptima = nivelSalinidadOptima;
     }
 
@@ -20,7 +25,7 @@ public class Halobacterium_Salinarum extends Arqueobacterias {
             this.nivelSalinidadOptima = nivelSalinidadOptima;
         }
     }
-
+    
     public String analizarRespuestaSalina() {
         if (nivelSalinidadOptima <= 3.0 && nivelSalinidadOptima >= 2.0) {
             return "Ambiente optimo para el crecimiento del Halobacterium Salinarum.";

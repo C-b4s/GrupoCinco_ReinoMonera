@@ -29,6 +29,17 @@ public class ClostridumBotulinum extends Eubacteria{
     public void setToxinaActiva(boolean toxinaActiva) {
         this.toxinaActiva = toxinaActiva;
     }
+<<<<<<< HEAD
+    // Constructores
+   
+    public ClostridumBotulinum(String nombreCientifico, String habitat, Double phOptimo, 
+                               Double temperaturaOptima, Boolean esPatogeno, Boolean anaerobioStricto, 
+                               String tipoFermentacion, String clasificacionEubacteria, 
+                               String gram, Boolean esProbiotico) {
+        super(nombreCientifico, habitat, phOptimo, temperaturaOptima, 
+              esPatogeno, anaerobioStricto, tipoFermentacion, clasificacionEubacteria, 
+              gram, esProbiotico);
+=======
 
     public ClostridumBotulinum(String nombreCientifico, String habitat,
                         Double phOptimo, Double temperaturaOptima,
@@ -39,6 +50,7 @@ public class ClostridumBotulinum extends Eubacteria{
                     phOptimo,temperaturaOptima,
                     esPatogeno,anaerobioStricto,esProbiotico,
                     gram, clasificacionEubacteria, tipoFermentacion);
+>>>>>>> b35617688be206933a52badc77316a186febb92f
         this.toxinaActiva = true;
         this.ambienteSinOxigeno = true;
         this.nivelToxina = 75.3;

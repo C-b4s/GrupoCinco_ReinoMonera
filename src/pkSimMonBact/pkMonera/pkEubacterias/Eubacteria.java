@@ -8,6 +8,14 @@ public abstract class Eubacteria extends ReinoMonera{
     private String clasificacionEubacteria;
     private String tipoFermentacion;
 
+<<<<<<< HEAD
+    public Eubacteria(String nombreCientifico, String habitat, Double phOptimo, 
+                      Double temperaturaOptima, Boolean esPatogeno, Boolean anaerobioStricto, 
+                      String tipoFermentacion, String clasificacionEubacteria, 
+                      String gram, Boolean esProbiotico) {
+        super(nombreCientifico, habitat, phOptimo, temperaturaOptima, 
+              esPatogeno, anaerobioStricto);
+=======
     protected Eubacteria(String nombreCientifico, String habitat,
                         Double phOptimo, Double temperaturaOptima,
                         Boolean esPatogeno, Boolean anaerobioStricto, Boolean esProbiotico,
@@ -16,6 +24,7 @@ public abstract class Eubacteria extends ReinoMonera{
         super(nombreCientifico,habitat,
                     phOptimo,temperaturaOptima,
                     esPatogeno,anaerobioStricto);
+>>>>>>> b35617688be206933a52badc77316a186febb92f
         this.tipoFermentacion = tipoFermentacion;
         this.clasificacionEubacteria = clasificacionEubacteria;
         this.gram = gram;
@@ -47,7 +56,10 @@ public abstract class Eubacteria extends ReinoMonera{
         this.tipoFermentacion = tipoFermentacion;
     }
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> b35617688be206933a52badc77316a186febb92f
     public Boolean reaccionarAntibiotico(String antibiotico){
     if(gram.equalsIgnoreCase("positivo") && antibiotico.equalsIgnoreCase("penicilina")){
         return false;

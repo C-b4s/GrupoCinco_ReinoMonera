@@ -20,6 +20,10 @@ public abstract class ReinoMonera {
         this.anaerobioEstricto = anaerobioStricto;
     }
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> b35617688be206933a52badc77316a186febb92f
 
     public String getNombreCientifico() {
         return nombreCientifico;
@@ -102,7 +106,12 @@ public abstract class ReinoMonera {
             return nombreCientifico + "no puede metabolizar " + comida + " .";
         }
     }
+<<<<<<< HEAD
+=======
 
     
 
+>>>>>>> b35617688be206933a52badc77316a186febb92f
 }
+
+

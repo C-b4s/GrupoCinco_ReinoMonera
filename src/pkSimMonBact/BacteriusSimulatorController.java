@@ -1,12 +1,9 @@
-package pkSimMonBact;
+
 
 import java.util.Scanner;
-import pkSimMonBact.pkBiologos.*;
-import pkSimMonBact.pkMonera.ReinoMonera;
-import pkSimMonBact.pkSimulacion.Simulacion;
 
-import pkSimMonBact.pkMonera.pkEubacterias.*;
-import pkSimMonBact.pkMonera.pkArqueobacterias.*;
+import pkBiologos.Biologo;
+import pkMonera.ReinoMonera;
 
 public class BacteriusSimulatorController {
     private ReinoMonera[] bacterias = new ReinoMonera[200];

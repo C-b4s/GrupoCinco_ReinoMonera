@@ -1,4 +1,4 @@
-package pkSimMonBact.pkMonera.pkEubacterias;
+package pkMonera.pkEubacterias;
 
 public class ClostridumBotulinum extends Eubacteria{
     // Atributos  

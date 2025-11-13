@@ -16,12 +16,36 @@ R03:El sistema debe permitir registrar múltiples bacterias de distintas clases 
 
 ## Requerimiento 4
 
-R04: El sistema debe indicar cuando exista una competencia entre las bacterias methanococcus y la halobacteria
+R04: El sistema debe indicar cuando exista una competencia entre las bacterias Methanococcus y la Halobacterium.
 
 ## Requerimiento 5
 
-R05: El microbiologo ambiental va a poder hacer una simulacion con las bacterias registradas para crear pruebas con bacterias
+R05: El microbiologo ambiental va a poder hacer una simulacion con las bacterias registradas para crear pruebas con las mismas.
 
 ## Requerimiento 6
 
 R06: El Bacteriologo únicamente podrá registrar las bacterias dependiendo de la clasificacion asignada, los dos deben tener un login y contraseña distinta.
+
+## Requerimeinto 7
+
+R07: Las arqeuobacterias indican la clasificacion en las que su subconjunto de bacterias estan, ademas las bacterias registradas seran Halobacterium y Methanococcus;
+
+## Requerimeinto 8
+
+R08: Se podrá  analizar la respuesta salina de la Halobacterium dependiendo del nivel de salinidad registrado por el bacteriólogo.
+
+## Requerimeinto 9
+
+R09:  Se podrá añadir los elementos necesarioa para la generación de metano por parte del Methanococcus
+
+## Requerimeinto 10
+
+R10: El sistema registrará si una bacteria reacciona a antibióticos, los cuales serán registrados por el bacteriólogo.
+
+## Requerimeinto 11
+
+R11: El sistema registrara la eficiencia en la produccion de fermentacion del lactobacilus y del streptococcus.
+
+## Requerimeinto 12
+
+R12: El sistema podra registrar la actividad toxica que presente la bacteria clostridum Botulinum.

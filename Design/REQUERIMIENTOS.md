@@ -2,8 +2,8 @@
 
 ## Requerimiento 1
 
-R01: El sistema debe poder simular interacciones entre las bacterias registradas, comparando sus nombres científicos
- para determinar el tipo de relación que se produce entre ellas
+R01: El sistema debe poder simular interacciones entre las bacterias registradas, comparando sus comportqmientos
+ para determinar el tipo de relación que se produce entre ellas.
 
 ## Requerimiento 2
 
@@ -24,4 +24,4 @@ R05: El microbiologo ambiental va a poder hacer una simulacion con las bacterias
 
 ## Requerimiento 6
 
-R06: El Bacteriologo podra registrar las bacterias unicamente dependiendo de la clasificacion asignada, los dos deben tener un login y contraseña distinta.
+R06: El Bacteriologo únicamente podrá registrar las bacterias dependiendo de la clasificacion asignada, los dos deben tener un login y contraseña distinta.

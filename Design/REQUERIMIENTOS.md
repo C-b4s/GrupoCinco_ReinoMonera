@@ -1,0 +1,27 @@
+# REQUIRIMIENTOS
+
+## Requerimiento 1
+
+R01: El sistema debe poder simular interacciones entre las bacterias registradas, comparando sus nombres científicos
+ para determinar el tipo de relación que se produce entre ellas
+
+## Requerimiento 2
+
+R02: El sistema debe identificar una relación simbiótica cuando se encuentren en la simulación las bacterias
+Lactobacillus acidophilus y Streptococcus thermophilus, registrando el resultado como “SIMBIOSIS (crecen juntas) ”.
+
+## Requerimiento 3
+
+R03:El sistema debe permitir registrar múltiples bacterias de distintas clases (eubacterias y arqueobacterias), cada una con sus propiedades biológicas (nombre científico, hábitat, pH óptimo, temperatura óptima, etc.)  y almacenarlas en una lista para su posterior simulación.
+
+## Requerimiento 4
+
+R04: El sistema debe indicar cuando exista una competencia entre las bacterias methanococcus y la halobacteria
+
+## Requerimiento 5
+
+R05: El microbiologo ambiental va a poder hacer una simulacion con las bacterias registradas para crear pruebas con bacterias
+
+## Requerimiento 6
+
+R06: El Bacteriologo podra registrar las bacterias unicamente dependiendo de la clasificacion asignada, los dos deben tener un login y contraseña distinta.

@@ -1,5 +1,6 @@
 package pkSimMonBact.pkBiologos;
 
+import pkSimMonBact.pkMonera.ReinoMonera;
 
 public abstract class Biologo {
     private String nombre;
@@ -51,10 +52,18 @@ public abstract class Biologo {
 
     }
     
-    public void generarInforme(String bacteria , Double tiempoAnalisis, String laboratorio){    
-        System.out.println("================== INFORME ==================");
+    public void generarInforme(ReinoMonera bacteria , Double tiempoAnalisis, String laboratorio){    
         
+        if (bacteria == null || tiempoAnalisis == null || laboratorio == null){
+            throw new IllegalArgumentException("Parámetros nulos no permitidos para generar el informe.");
+        }
+
+        System.out.println("Generando informe...");
+        System.out.println("================== INFORME DE ANÁLISIS BACTERILOGICO ==================");
         
+        System.out.println(titulo);
+        int espacios = titulo.length();
+
         System.out.print("|");
         System.out.println("Informe de " + bacteria + ": analizada por " + nombre + "en " + laboratorio +
         " durante " + tiempoAnalisis + "horas");

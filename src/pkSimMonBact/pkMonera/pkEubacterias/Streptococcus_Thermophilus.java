@@ -7,10 +7,15 @@ public class Streptococcus_Thermophilus extends Eubacteria {
 
     
     //Constructores:
-    public Streptococcus_Thermophilus(Builder builder) {
-        super(builder);
-        this.nivelAcidoLactico = builder.nivelAcidoLactico;
-        this.consumoAzucares = builder.consumoAzucares;
+    public Streptococcus_Thermophilus(String nombreCientifico, String habitat, Double phOptimo, 
+                                      Double temperaturaOptima, Boolean esPatogeno, Boolean anaerobioStricto, 
+                                      String tipoFermentacion, String clasificacionEubacteria, String gram, 
+                                      Boolean esProbiotico, Double nivelAcidoLactico, Double consumoAzucares) {
+        super(nombreCientifico, habitat, phOptimo, temperaturaOptima, 
+              esPatogeno, anaerobioStricto, tipoFermentacion, clasificacionEubacteria, 
+              gram, esProbiotico);
+        this.nivelAcidoLactico = nivelAcidoLactico;
+        this.consumoAzucares = consumoAzucares;
     }
 
 
@@ -87,36 +92,10 @@ public class Streptococcus_Thermophilus extends Eubacteria {
 
     }
 
-    public static class Builder extends Eubacteria.Builder<Builder> {
-        private Double nivelAcidoLactico;
-         private Double consumoAzucares;
-
-        public Builder nivelAcidoLactico(Double nivel) { 
-            this.nivelAcidoLactico = nivel; 
-            return this; 
-         }
-
-        public Builder consumoAzucares(Double consumo) { 
-            this.consumoAzucares = consumo; 
-            return this; 
-         }
-
-        @Override
-        protected Builder self() { 
-            return this; 
-        }
-
-        public Streptococcus_Thermophilus build() {
-        if (this.nivelAcidoLactico == null || this.consumoAzucares == null) {
-            throw new IllegalStateException("Los valores de fermentación no pueden ser nulos");
-        }
-        return new Streptococcus_Thermophilus(this);
-    }
-
-
-    }
-
-    
-
     
 }
+
+    
+
+    
+

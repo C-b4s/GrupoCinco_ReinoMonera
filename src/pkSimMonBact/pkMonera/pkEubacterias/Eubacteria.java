@@ -8,13 +8,16 @@ public abstract class Eubacteria extends ReinoMonera{
     private String clasificacionEubacteria;
     private String tipoFermentacion;
 
-    protected Eubacteria(Builder<?> builder) {
-
-        super(builder);
-        this.tipoFermentacion = builder.tipoFermentacion;
-        this.clasificacionEubacteria = builder.clasificacionEubacteria;
-        this.gram = builder.gram;
-        this.esProbiotico = builder.esProbiotico;
+    public Eubacteria(String nombreCientifico, String habitat, Double phOptimo, 
+                      Double temperaturaOptima, Boolean esPatogeno, Boolean anaerobioStricto, 
+                      String tipoFermentacion, String clasificacionEubacteria, 
+                      String gram, Boolean esProbiotico) {
+        super(nombreCientifico, habitat, phOptimo, temperaturaOptima, 
+              esPatogeno, anaerobioStricto);
+        this.tipoFermentacion = tipoFermentacion;
+        this.clasificacionEubacteria = clasificacionEubacteria;
+        this.gram = gram;
+        this.esProbiotico = esProbiotico;
     }
 
     public Boolean getEsProbiotico() {
@@ -41,41 +44,6 @@ public abstract class Eubacteria extends ReinoMonera{
     public void setTipoFermentacion(String tipoFermentacion) {
         this.tipoFermentacion = tipoFermentacion;
     }
-
-
-     public static abstract class Builder<Monera extends Builder<Monera>>
-        extends ReinoMonera.Builder<Monera> {
-        private String tipoFermentacion;
-        private String clasificacionEubacteria;
-        private String gram;
-        private Boolean esProbiotico;
-
-        public Monera tipoFermentacion(String tf) { 
-            this.tipoFermentacion = tf; 
-            return self(); 
-         }
-
-        public Monera clasificacionEubacteria(String c) { 
-            this.clasificacionEubacteria = c; 
-            return self(); 
-        }
-
-        public Monera gram(String g) { 
-            this.gram = g; 
-            return self(); 
-        }
-
-        public Monera esProbiotico(Boolean p) { 
-            this.esProbiotico = p; 
-            return self(); 
-        }
-
-        @Override
-        protected abstract Monera self();
-
-
-    }
-
 
     public Boolean reaccionarAntibiotico(String antibiotico){
     if(gram.equalsIgnoreCase("positivo") && antibiotico.equalsIgnoreCase("penicilina")){

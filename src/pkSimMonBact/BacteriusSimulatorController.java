@@ -9,6 +9,11 @@ import pkSimMonBact.pkMonera.pkEubacterias.*;
 import pkSimMonBact.pkMonera.pkArqueobacterias.*;
 
 public class BacteriusSimulatorController {
+    public static  final String ROJO = "\u001B[31m";
+    public static final String VERDE = "\u001B[32m";
+    public static final String AMARILLO = "\u001B[33m";
+    public static  final String RESET = "\u001B[0m";
+
     private ReinoMonera[] bacterias = new ReinoMonera[200];
     private Biologo[] biologos = new Biologo[20];
     private Simulacion[] simulaciones = new Simulacion[100];
@@ -30,7 +35,7 @@ public class BacteriusSimulatorController {
 
         while (running) {
             if (this.getUsuarioActual() == null) {
-                System.out.println("\n--- MENU (NO autenticado) ---");
+                System.out.println(VERDE + "\n--- MENU (NO autenticado) ---" + RESET);
                 System.out.println("1) Iniciar sesión");
                 System.out.println("0) Salir");
                 System.out.print("Opción: ");
@@ -42,10 +47,12 @@ public class BacteriusSimulatorController {
                     System.out.print("Password: ");
                     String pwd = sc.nextLine();
                     boolean ok = this.autenticar(login, pwd);
-                    System.out.println(ok ? "Autenticado como " + this.getUsuarioActual().getNombre()
-                                          : "Credenciales inválidas");
+                    System.out.println(ok ? AMARILLO + "Autenticado como " + this.getUsuarioActual().getNombre() + RESET
+                                          : ROJO + "Credenciales inválidas"  + RESET);
                 } else if (line.equals("0")) {
                     running = false;
+                }else{
+                    imprimirErrorOpcionIncorrecta();
                 }
 
             } else {
@@ -64,7 +71,7 @@ public class BacteriusSimulatorController {
                 switch (opt) {
                     case "1":
                         ReinoMonera[] bs = this.obtenerTodasLasBacterias();
-                        if (bs.length == 0) System.out.println("No hay bacterias registradas");
+                        if (bs.length == 0) System.out.println(ROJO + "No hay bacterias registradas" + RESET);
                         for (ReinoMonera b : bs)
                             System.out.println("- " + b.getNombreCientifico());
                         break;
@@ -86,9 +93,10 @@ public class BacteriusSimulatorController {
                             System.out.print("Temperatura: ");
                             double temp = Double.parseDouble(sc.nextLine());
                              Simulacion sim = this.crearSimulacion(nombreSim, ph, temp);
+                                 
 
                         if (sim != null) {
-            // Mostrar bacterias disponibles
+                    // Mostrar bacterias disponibles
                         ReinoMonera[] todas = this.obtenerTodasLasBacterias();
                     if (todas.length == 0) {
                         System.out.println(" No hay bacterias registradas. Pídele al bacteriólogo que agregue algunas.");
@@ -110,7 +118,10 @@ public class BacteriusSimulatorController {
                         // Ignora errores de número
                     }
                 }
+                
+                
             }
+            
 
             System.out.println(" Simulación creada correctamente con " + sim.getBacterias().length + " bacterias.");
         }
@@ -121,7 +132,7 @@ public class BacteriusSimulatorController {
 
                     case "4":
                         Simulacion[] sims = this.obtenerMisSimulaciones();
-                        if (sims.length == 0) System.out.println("No tiene simulaciones");
+                        if (sims.length == 0) System.out.println(ROJO + "No tiene simulaciones" + RESET);
                         for (Simulacion s : sims) System.out.println("- " + s.getNombre());
                         break;
 
@@ -150,12 +161,22 @@ public class BacteriusSimulatorController {
                     case "0":
                         running = false;
                         break;
+
+                    default:
+                        imprimirErrorOpcionIncorrecta();
+                        break;
                 }
             }
         }
 
         sc.close();
         System.out.println("Aplicación finalizada");
+    }
+
+    private void imprimirErrorOpcionIncorrecta() {
+        System.err.println(ROJO + "\n================== ERROR ==================\n" +
+                           "Opción incorrecta. Por favor, intente de nuevo.\n" + RESET);
+
     }
 
     private void crearBacteriaInteractiva(Scanner sc) {
@@ -321,21 +342,21 @@ public class BacteriusSimulatorController {
     public void ejecutarSimulacion(Simulacion sim) {
         if (sim == null) return;
 
-        System.out.println("\n=== INICIANDO SIMULACIÓN: " + sim.getNombre() + " ===");
+        System.out.println(VERDE + "\n=== INICIANDO SIMULACION: " + sim.getNombre() + " ===" + RESET);
         System.out.println("pH: " + sim.getpHActual() + " | Temperatura: " + sim.getTemperaturaActual());
 
         ReinoMonera[] bs = sim.getBacterias();
         for (ReinoMonera b : bs) {
             double dPh = Math.abs(b.getPhOptimo() - sim.getpHActual());
             double dT = Math.abs(b.getTemperaturaOptima() - sim.getTemperaturaActual());
-            System.out.println((dPh < 2 && dT < 5 ? "✓" : "✗") + " " + b.getNombreCientifico());
+            System.out.println((dPh < 2 && dT < 5 ? "--" : "✗") + " " + b.getNombreCientifico());
         }
 
         sim.ejecutarInteracciones();
         for (String inter : sim.getInteraccionesOcurridas())
             System.out.println("→ " + inter);
 
-        System.out.println("=== FIN DE SIMULACIÓN ===");
+        System.out.println(VERDE + "=== FIN DE SIMULACION ===" + RESET);
     }
 
     public Simulacion[] obtenerMisSimulaciones() {

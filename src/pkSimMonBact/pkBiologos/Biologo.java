@@ -1,12 +1,7 @@
 package pkSimMonBact.pkBiologos;
 
-<<<<<<< HEAD
-import pkSimMonBact.pkMonera.ReinoMonera;
-
-=======
 import java.util.Scanner;
 import pkSimMonBact.pkMonera.ReinoMonera;
->>>>>>> b35617688be206933a52badc77316a186febb92f
 public abstract class Biologo {
     Scanner scanner = new Scanner(System.in);
 
@@ -118,36 +113,19 @@ public abstract class Biologo {
         System.out.printf(" Analista: %s %s%n", getNombre(), getApellido());
         System.out.println("=========================================");
     }
-<<<<<<< HEAD
-    
-    public void generarInforme(ReinoMonera bacteria , Double tiempoAnalisis, String laboratorio){    
-        
-        if (bacteria == null || tiempoAnalisis == null || laboratorio == null){
-            throw new IllegalArgumentException("Parámetros nulos no permitidos para generar el informe.");
-        }
-
-        System.out.println("Generando informe...");
-        System.out.println("================== INFORME DE ANÁLISIS BACTERILOGICO ==================");
-        
-        System.out.println(titulo);
-        int espacios = titulo.length();
-
-        System.out.print("|");
-        System.out.println("Informe de " + bacteria + ": analizada por " + nombre + "en " + laboratorio +
-        " durante " + tiempoAnalisis + "horas");
-=======
-
-    public String obtenerTipo() {
-        // TODO Auto-generated method stu
-        throw new UnsupportedOperationException("Unimplemented method 'obtenerTipo'");
-        
-    }
        public int getContadorBacterias() {
         return contadorBacterias;
->>>>>>> b35617688be206933a52badc77316a186febb92f
     }
 
     public void setContadorBacterias(int contadorBacterias) {
+        if (contadorBacterias < 0) {
+            System.out.println(" Error: El contador de bacterias no puede ser negativo.");
+        } else {
         this.contadorBacterias = contadorBacterias;
+        }
+    }
+
+    public String obtenerTipo() {
+        return "No definido";
     }
 }

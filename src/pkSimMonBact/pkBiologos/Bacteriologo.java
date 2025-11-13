@@ -25,8 +25,8 @@ public class Bacteriologo extends Biologo {
         super.setLaboratorioAsignado(laboratorioAsignado);
 
         this.manejaPatogenosPeligrosos = manejaPatogenosPeligrosos;
-        this.login = login;
-        this.password = password;
+        this.login = "juan01";
+        this.password = "clave123";
         this.nivelBioseguridad = nivelBioseguridad;
     }
 

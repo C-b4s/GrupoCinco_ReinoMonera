@@ -1,7 +1,7 @@
-package pkSimMonBact.pkSimulacion;
+package pkSimulacion;
 
-import pkSimMonBact.pkBiologos.Biologo;
-import pkSimMonBact.pkMonera.ReinoMonera;
+import pkBiologos.Biologo;
+import pkMonera.ReinoMonera;
 
 public class Simulacion {
     private String nombre;

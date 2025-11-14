@@ -1,4 +1,4 @@
-package pkSimMonBact.pkMonera.pkEubacterias;
+package pkMonera.pkEubacterias;
 
 public class ClostridumBotulinum extends Eubacteria{
 
@@ -80,7 +80,7 @@ public class ClostridumBotulinum extends Eubacteria{
         }else {
             System.out.println("Toxina: INACTIVA");
         }
-        
+
     }
 
     public void desactivarToxina(){
@@ -94,5 +94,34 @@ public class ClostridumBotulinum extends Eubacteria{
         if (ambienteSinOxigeno) return "Produce toxina botulínica en ambientes anaerobios";
         else return ROJO + "Dado que el ambiente no es anaerobio, no se ha producido toxina botulinica" + RESET;
     }
+
+     public String activarPorLactobacillus(Lactobacilus_Acidophilus Lactobacilus) {
+        return "La bacteria Clostridum botulinum detecta el ácido láctico producido por " + Lactobacilus.getNombreCientifico() + " y activa su metabolismo anaeróbico.";
+    }
+
+    public String competirConDosBacterias(Lactobacilus_Acidophilus lacto, Streptococcus_Thermophilus strepto) {
+        return "La bacteria Clostridum botulinum compite por recursos contra " + lacto.getNombreCientifico() + " y " + strepto.getNombreCientifico() + " en un ambiente compartido.";
+    }
+
+    public String inhibirBacteria(Eubacteria bacteria, Float crecimiento) {
+        if (!this.toxinaActiva){
+            return "La toxina butilinica está inactiva, por tanto no hay efecto sobre " + bacteria.getNombreCientifico();
+        }
+
+        String nombre = bacteria.getNombreCientifico().toLowerCase();
+        if (this.toxinaActiva){
+            if (nombre.contains("Lactobacillus acidophilus")){
+                return "La toxina botulínica de Clostridum Botulinum inhibe el crecimiento de " + bacteria.getNombreCientifico() + " al alterar su pH y eliminar nutrientes disponibles para el crecimiento de la misma.";
+            }
+
+            if (nombre.contains("Streptococcus thermophilus")) {
+            return "La toxina botulínica de Clostridum Botulinum inhibe parcialmente a "  + bacteria.getNombreCientifico()
+                    + " desplazándola en ambientes anaeróbicos estrictos.";
+            }
+
+        }
+        return "No se registró ninguna inhibición en específico contra " + bacteria.getNombreCientifico() + ".";  
+    }
+
 
 }

@@ -1,14 +1,19 @@
-package pkSimMonBact;
+
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import pkSimMonBact.pkBiologos.*;
-import pkSimMonBact.pkMonera.ReinoMonera;
-import pkSimMonBact.pkSimulacion.Simulacion;
 
-import pkSimMonBact.pkMonera.pkEubacterias.*;
-import pkSimMonBact.pkMonera.pkArqueobacterias.*;
+import pkBiologos.Bacteriologo;
+import pkBiologos.Biologo;
+import pkBiologos.MicrobiologoAmbiental;
+import pkMonera.ReinoMonera;
+import pkMonera.pkArqueobacterias.Halobacterium_Salinarum;
+import pkMonera.pkArqueobacterias.Methanococcus_Jannaschii;
+import pkMonera.pkEubacterias.ClostridumBotulinum;
+import pkMonera.pkEubacterias.Lactobacilus_Acidophilus;
+import pkMonera.pkEubacterias.Streptococcus_Thermophilus;
+import pkSimulacion.Simulacion;
 
 public class BacteriusSimulatorController {
     public static  final String ROJO = "\u001B[31m";

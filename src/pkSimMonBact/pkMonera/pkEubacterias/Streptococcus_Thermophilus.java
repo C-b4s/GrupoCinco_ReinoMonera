@@ -12,12 +12,12 @@ public class Streptococcus_Thermophilus extends Eubacteria {
                                                                         Double phOptimo, Double temperaturaOptima,
                                                                         Boolean esPatogeno, Boolean anaerobioStricto, Boolean esProbiotico,
                                                                         String gram, String clasificacionEubacteria, String tipoFermentacion  ){
-        super("Streptococcus Thermophilus", habitat,
-                    phOptimo,temperaturaOptima,
-                    false ,anaerobioStricto, true,
-                    gram, clasificacionEubacteria, tipoFermentacion);
-        this.nivelAcidoLactico=nivelAcidoLactico;
-        this.consumoAzucares =consumoAzucares;
+        super("Streptococcus Thermophilus", "productos lácteos",
+                    6.5,42.5,
+                    false , false, true,
+                    "positivo", "Lactobacillales", "lactica");
+        this.nivelAcidoLactico = 0.0;
+        this.consumoAzucares = 0.0;
         this.tipoAzucarFermentado = "lactosa";
     }
 
@@ -96,7 +96,7 @@ public class Streptococcus_Thermophilus extends Eubacteria {
     
     @Override
     public String ejecutarFuncionMetabolica(){
-            return this.getNombreCientifico() + " fermenta lactosa y produce ácido láctico, contribuyendo a la formación de yogur";
+            return this.getNombreCientifico() + "\nfermenta lactosa y produce ácido láctico, contribuyendo a la formación de yogur";
     }
 }
 

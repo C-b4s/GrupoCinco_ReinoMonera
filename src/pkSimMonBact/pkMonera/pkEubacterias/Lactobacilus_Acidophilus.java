@@ -56,7 +56,7 @@ public void setConsumoAzucares(Double consumoAzucares) {
 
 @Override
 public String ejecutarFuncionMetabolica(){
-    return this.getNombreCientifico() + " fermenta lactosa y produce ácido láctico";
+    return this.getNombreCientifico() + "\n  fermenta lactosa y produce ácido láctico";
 }
 
 }

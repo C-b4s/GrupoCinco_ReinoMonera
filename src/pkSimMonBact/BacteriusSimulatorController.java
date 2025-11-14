@@ -83,12 +83,35 @@ public class BacteriusSimulatorController {
                 String opt = ingresoDatos.nextLine();
 
                 switch (opt) {
-                    case "1":
-                        ReinoMonera[] bs = this.obtenerTodasLasBacterias();
-                        if (bs.length == 0) System.out.println(ROJO + "No hay bacterias registradas" + RESET);
-                        for (ReinoMonera b : bs)
-                            System.out.println("- " + b.getNombreCientifico());
-                        break;
+                   case "1":
+    ReinoMonera[] bs = this.obtenerTodasLasBacterias();
+    if (bs.length == 0) {
+        System.out.println(ROJO + "No hay bacterias registradas" + RESET);
+        break;
+    }
+
+    System.out.println("Bacterias registradas:");
+    for (int i = 0; i < bs.length; i++) {
+        System.out.println((i + 1) + ") " + bs[i].getNombreCientifico());
+    }
+
+    System.out.print("Seleccione bacteria para ver información: ");
+
+    try {
+        int idxInfo = Integer.parseInt(ingresoDatos.nextLine()) - 1;
+
+        if (idxInfo >= 0 && idxInfo < bs.length) {
+            String pantallaInfo = mostrarInformacion(bs[idxInfo]);
+            System.out.println(pantallaInfo);
+        } else {
+            System.out.println(ROJO + "Índice fuera de rango." + RESET);
+        }
+
+    } catch (NumberFormatException e) {
+        System.out.println(ROJO + "Debe ingresar un número válido." + RESET);
+    }
+
+    break;
 
                     case "2":
                         if (u instanceof Bacteriologo) {
@@ -168,6 +191,38 @@ public class BacteriusSimulatorController {
         ingresoDatos.close();
         System.out.println("Aplicación finalizada");
     }
+
+    
+public void definirNivelesMetano(Methanococcus_Jannaschii m, Scanner sc) {
+    double co2 = 0, h2 = 0;
+    boolean valido = false;
+
+    do {
+        try {
+            System.out.print("Ingrese nivel de CO₂ disponible: ");
+            co2 = Double.parseDouble(sc.nextLine());
+
+            System.out.print("Ingrese nivel de H₂ disponible: ");
+            h2 = Double.parseDouble(sc.nextLine());
+
+            if (co2 < 0 || h2 < 0) {
+                System.out.println("Los valores no pueden ser negativos.");
+            } else {
+                valido = true;
+            }
+
+        } catch (NumberFormatException e) {
+            System.out.println(" Debe ingresar valores numéricos válidos.");
+        }
+
+    } while (!valido);
+
+    // Asignar valores al objeto
+    m.setNivelCO2(co2);
+    m.setNivelH2(h2);
+
+    System.out.println("Niveles establecidos correctamente.");
+}
 
     private void seleccionarBacterias(Scanner sc, Simulacion sim, ReinoMonera[] todas) {
 
@@ -277,9 +332,9 @@ public class BacteriusSimulatorController {
                         true,
                         true,
                         "Gram positiva",
-                        "Eubacteria",
+                        "Heterótrofa, anaerobia facultativa",
                         "Fermentación láctica",
-                        "Glucosa",
+                        "glucosa",
                         0.8,
                         1.2
                     );
@@ -297,7 +352,7 @@ public class BacteriusSimulatorController {
                         false,
                         true,
                         "Gram positiva",
-                        "Eubacteria",
+                        "Cocos, morfologia",
                         "Fermentación láctica"
                     );
                     break;
@@ -312,7 +367,7 @@ public class BacteriusSimulatorController {
                         true,
                         false,
                         "Gram positiva",
-                        "Eubacteria",
+                        "Gram positivo, anaerobia estricta",
                         "Fermentación",
                         true,
                         true,
@@ -337,7 +392,7 @@ public class BacteriusSimulatorController {
                         false,
                         "Gram negativa",
                         "Halófila extrema"
-                        ,12.4
+                        ,2.4
                     );
                     break;
 
@@ -351,18 +406,31 @@ public class BacteriusSimulatorController {
                         true,
                         "Gram negativa",
                         "Metanógena",
-                        2.3
+                        2.3,
+                        0.0,
+                        0.0
                     );
                     break;
             }
         }
-
-        if (b != null) {
-            boolean ok = this.registrarBacteria(b);
-            System.out.println(ok ? "Bacteria registrada correctamente." : ROJO + "Error al registrar bacteria." + RESET);
-        } else {
-            System.out.println("Tipo no válido.");
+        if (b instanceof Methanococcus_Jannaschii) {
+            definirNivelesMetano((Methanococcus_Jannaschii)b, sc);
+            b.ejecutarFuncionMetabolica();
         }
+       if (b != null) {
+
+    // 🔹 Ejecutar la función metabólica específica de la bacteria creada
+    System.out.println("\n--- Función metabólica ejecutada ---");
+    System.out.println(b.ejecutarFuncionMetabolica());
+    System.out.println("------------------------------------\n");
+
+    // 🔹 Registrar bacteria
+    boolean ok = this.registrarBacteria(b);
+    System.out.println(ok ? "Bacteria registrada correctamente." : ROJO + "Error al registrar bacteria." + RESET);
+
+} else {
+    System.out.println("Tipo no válido.");
+}
     }
 
     public boolean autenticar(String login, String password) {
@@ -451,6 +519,7 @@ public class BacteriusSimulatorController {
     info += "Temperatura óptima: " + b1.getTemperaturaOptima() + " °C\n";
     info += "Es patógeno: " + (b1.getEsPatogeno() ? "Sí" : "No") + "\n";
     info += "Anaerobio estricto: " + (b1.getAnaerobioStricto()? "Sí" : "No") + "\n";
+    info += "Funcion metabolica: " + b1.ejecutarFuncionMetabolica() + "\n";
     info += "================================================\n";
     return info;
 }

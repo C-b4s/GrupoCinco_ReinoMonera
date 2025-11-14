@@ -8,7 +8,7 @@ public class Halobacterium_Salinarum extends Arqueobacterias {
                         Double phOptimo, Double temperaturaOptima,
                         Boolean esPatogeno, Boolean anaerobioStricto
                         ,String resultadoTincioGram, String clasificacionArqueo, Double nivelSalinidadOptima) {
-        super(nombreCientifico,habitat,
+        super("Halobacterium Salinarum",habitat,
                     phOptimo,temperaturaOptima,
                     esPatogeno,anaerobioStricto, resultadoTincioGram, clasificacionArqueo);
         this.nivelSalinidadOptima = nivelSalinidadOptima;
@@ -34,6 +34,11 @@ public class Halobacterium_Salinarum extends Arqueobacterias {
         } else {
             return "Consume mucha energía y su metabolismo se desacelera y se desestabilizan.";
         }
+    }
+
+    @Override
+    public String ejecutarFuncionMetabolica(){
+        return analizarRespuestaSalina();
     }
 
 }

@@ -1,5 +1,6 @@
 package pkSimMonBact;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import pkSimMonBact.pkBiologos.*;
@@ -25,13 +26,25 @@ public class BacteriusSimulatorController {
     private int totalSimulaciones = 0;
 
     public BacteriusSimulatorController() {
-        biologos[0] = new Bacteriologo("Juan", "García", 30, 1, "Microbiología", "Lab1", "juan01", "clave123");
+        biologos[0] = new Bacteriologo(
+        "Juan", 
+        "García", 
+        30, 
+        1,
+        "Microbiología", 
+        "Lab1",
+        true,              
+        "juan01",          
+        "clave123",      
+        3                  
+);
+
         biologos[1] = new MicrobiologoAmbiental("María", "López", 28, 2, "Ecología", "Lab2", "Océano", "eco01", "entrada123", "Marino");
         totalBiologos = 2;
     }
 
     public void inicializar() {
-        Scanner sc = new Scanner(System.in);
+        Scanner ingresoDatos = new Scanner (System.in);
         boolean running = true;
 
         while (running) {
@@ -40,13 +53,13 @@ public class BacteriusSimulatorController {
                 System.out.println("1) Iniciar sesión");
                 System.out.println("0) Salir");
                 System.out.print("Opción: ");
-                String line = sc.nextLine();
+                String line = ingresoDatos.nextLine();
 
                 if (line.equals("1")) {
                     System.out.print("Login: ");
-                    String login = sc.nextLine();
+                    String login = ingresoDatos.nextLine();
                     System.out.print("Password: ");
-                    String pwd = sc.nextLine();
+                    String pwd = ingresoDatos.nextLine();
                     boolean ok = this.autenticar(login, pwd);
                     System.out.println(ok ? AMARILLO + "Autenticado como " + this.getUsuarioActual().getNombre() + RESET
                                           : ROJO + "Credenciales inválidas"  + RESET);
@@ -67,7 +80,7 @@ public class BacteriusSimulatorController {
                 if (u instanceof MicrobiologoAmbiental) System.out.println("6) Ejecutar simulación");
                 System.out.println("0) Salir");
                 System.out.print("Opción: ");
-                String opt = sc.nextLine();
+                String opt = ingresoDatos.nextLine();
 
                 switch (opt) {
                     case "1":
@@ -79,7 +92,7 @@ public class BacteriusSimulatorController {
 
                     case "2":
                         if (u instanceof Bacteriologo) {
-                            crearBacteriaInteractiva(sc);
+                            crearBacteriaInteractiva(ingresoDatos);
                         } else {
                             System.out.println("Solo los Bacteriólogos pueden registrar bacterias.");
                         }
@@ -88,11 +101,11 @@ public class BacteriusSimulatorController {
                     case "3":
                         if (u instanceof MicrobiologoAmbiental) {
                             System.out.print("Nombre simulación: ");
-                            String nombreSim = sc.nextLine();
+                            String nombreSim = ingresoDatos.nextLine();
                             System.out.print("pH: ");
-                            double ph = Double.parseDouble(sc.nextLine());
+                            double ph = Double.parseDouble(ingresoDatos.nextLine());
                             System.out.print("Temperatura: ");
-                            double temp = Double.parseDouble(sc.nextLine());
+                            double temp = Double.parseDouble(ingresoDatos.nextLine());
                              Simulacion sim = this.crearSimulacion(nombreSim, ph, temp);
                                  
 
@@ -106,30 +119,12 @@ public class BacteriusSimulatorController {
                     for (int i = 0; i < todas.length; i++) {
                         System.out.println((i + 1) + ") " + todas[i].getNombreCientifico());
                     }
-                    System.out.print("Opción(es): ");
-                    String seleccion = sc.nextLine();
-                    String[] partes = seleccion.split(",");
-                for (String p : partes) {
-                    try {
-                        int idx = Integer.parseInt(p.trim()) - 1;
-                        if (idx >= 0 && idx < todas.length) {
-                            sim.anadirBacteria(todas[idx]);
-                        }
-                    } catch (InputMismatchException e) {
-                        imprimirErrorTipoNoValido();
-                    }
-                }
-                
-                
-            }
-            
-
-            System.out.println(" Simulación creada correctamente con " + sim.getBacterias().length + " bacterias.");
-        }
+                    seleccionarBacterias(ingresoDatos, sim, todas);
+                };
     } else {
         System.out.println("Solo Microbiólogos pueden crear simulaciones.");
     }
-    break;
+    break;}
 
                     case "4":
                         Simulacion[] sims = this.obtenerMisSimulaciones();
@@ -153,7 +148,7 @@ public class BacteriusSimulatorController {
                                     System.out.println((i + 1) + ") " + misSims[i].getNombre());
                                 }
                                 System.out.print("Selecciona número de simulación: ");
-                                int idx = Integer.parseInt(sc.nextLine()) - 1;
+                                int idx = Integer.parseInt(ingresoDatos.nextLine()) - 1;
                                 if (idx >= 0 && idx < misSims.length) this.ejecutarSimulacion(misSims[idx]);
                             }
                         }
@@ -170,8 +165,70 @@ public class BacteriusSimulatorController {
             }
         }
 
-        sc.close();
+        ingresoDatos.close();
         System.out.println("Aplicación finalizada");
+    }
+
+    private void seleccionarBacterias(Scanner sc, Simulacion sim, ReinoMonera[] todas) {
+
+    int cantidadMinima = 2;
+    int max = todas.length;
+
+    boolean entradaValida;
+
+    do {
+        entradaValida = true;
+
+        // Lista temporal para evitar agregar bacterias si el usuario se equivoca
+        ArrayList<ReinoMonera> seleccionTemporal = new ArrayList<>();
+
+        System.out.print("Opción(es): ");
+        String seleccion = sc.nextLine();
+        String[] partes = seleccion.split(",");
+
+        int contadorValidas = 0;
+
+        for (String p : partes) {
+            try {
+                int numero = Integer.parseInt(p.trim());
+
+                if (numero >= 1 && numero <= max) {
+                    int idx = numero - 1;
+                    seleccionTemporal.add(todas[idx]);
+                    contadorValidas++;
+                } else {
+                        entradaValida = false;
+                }
+
+            } catch (NumberFormatException e) {
+                imprimirErrorTipoNoValido();
+                entradaValida = false;
+            }
+        }
+
+        // Validar mínimo de bacterias
+        if (contadorValidas < cantidadMinima) {
+            imprimirErrorSeleccionBacterias(cantidadMinima);
+            entradaValida = false;
+        }
+
+        // Si la entrada fue válida, recién aquí agregamos a la simulación
+        if (entradaValida) {
+            for (ReinoMonera b : seleccionTemporal) {
+                sim.anadirBacteria(b);
+            }
+
+            System.out.println("Simulación creada correctamente con "
+                    + sim.getBacterias().length + " bacterias.");
+        }
+
+    } while (!entradaValida);
+    }
+
+    private void imprimirErrorSeleccionBacterias(int cantidadMinima) {
+        System.err.println(ROJO + "\n================== ERROR ==================\n" +
+                           "Debes seleccionar al menos " + cantidadMinima + " bacterias.\n" + RESET);
+        throw new UnsupportedOperationException("Unimplemented method 'imprimirErrorSeleccionBacterias'");
     }
 
     private void imprimirErrorTipoNoValido() {
@@ -385,4 +442,16 @@ public class BacteriusSimulatorController {
         }
         return res;
     }
+
+    public String mostrarInformacion(ReinoMonera b1) {
+    String info = "\n========== Información de la bacteria ==========\n";
+    info += "Nombre científico: " + b1.getNombreCientifico() + "\n";
+    info += "Hábitat: " + b1.getHabitat() + "\n";
+    info += "pH óptimo: " + b1.getPhOptimo() + "\n";
+    info += "Temperatura óptima: " + b1.getTemperaturaOptima() + " °C\n";
+    info += "Es patógeno: " + (b1.getEsPatogeno() ? "Sí" : "No") + "\n";
+    info += "Anaerobio estricto: " + (b1.getAnaerobioStricto()? "Sí" : "No") + "\n";
+    info += "================================================\n";
+    return info;
+}
 }

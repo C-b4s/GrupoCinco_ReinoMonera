@@ -16,7 +16,7 @@ public Lactobacilus_Acidophilus(String nombreCientifico, String habitat,
                     phOptimo,temperaturaOptima,
                     esPatogeno,anaerobioStricto,esProbiotico,
                     gram, clasificacionEubacteria, tipoFermentacion);
-    this.tipoAzucarFermentado ="Glucosa";
+    this.tipoAzucarFermentado ="glucosa";
     this.nivelProduccionAcidoLact=0.0;
 }
 
@@ -26,7 +26,7 @@ public Double evaluarEficienciaFermentacion(){
     return Math.round(eficiencia *100.0 )/100.0;
  }
 public String fermentar (String sustrato){
-    if (sustrato.equalsIgnoreCase(tipoAzucarFermentado)){
+    if (sustrato.equalsIgnoreCase(this.tipoAzucarFermentado)){
         nivelProduccionAcidoLact += 4.5;
         return getNombreCientifico() + "fermentó" + sustrato + " y produjo acido lactico";
     }else{
@@ -52,6 +52,11 @@ public Double getConsumoAzucares() {
 
 public void setConsumoAzucares(Double consumoAzucares) {
     this.consumoAzucares = consumoAzucares;
+}
+
+@Override
+public String ejecutarFuncionMetabolica(){
+    return this.getNombreCientifico() + " fermenta lactosa y produce ácido láctico";
 }
 
 }

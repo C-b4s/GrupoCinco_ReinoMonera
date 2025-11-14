@@ -9,7 +9,7 @@ public class Methanococcus_Jannaschii extends Arqueobacterias {
                         Boolean esPatogeno, Boolean anaerobioStricto,String resultadoTincioGram,
                         String clasificacionArqueo, Double nivelMetanoProducido) {
         
-        super(nombreCientifico,habitat,
+        super("Methanococcus Jannaschii",habitat,
                     phOptimo,temperaturaOptima,
                     esPatogeno,anaerobioStricto, resultadoTincioGram, clasificacionArqueo);
         this.nivelMetanoProducido = nivelMetanoProducido;
@@ -49,6 +49,11 @@ public class Methanococcus_Jannaschii extends Arqueobacterias {
 
     private Boolean seAdaptaCondicionAnaerobica() {
         return this.adaptarseCondicionesAnaerobicas();
+    }
+
+    @Override
+    public String ejecutarFuncionMetabolica(){
+        return "Realiza metabolismo metanogénico y produce metano";
     }
 
 }

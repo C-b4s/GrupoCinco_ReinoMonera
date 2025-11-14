@@ -2,7 +2,7 @@
 
 ## Requerimiento 1
 
-R01: El sistema debe poder simular interacciones entre las bacterias registradas, comparando sus comportqmientos
+R01: El sistema debe poder simular interacciones entre las bacterias registradas, comparando sus comportamientos
  para determinar el tipo de relación que se produce entre ellas.
 
 ## Requerimiento 2
@@ -16,11 +16,11 @@ R03:El sistema debe permitir registrar múltiples bacterias de distintas clases 
 
 ## Requerimiento 4
 
-R04: El sistema debe indicar cuando exista una competencia entre las bacterias Methanococcus y la Halobacterium.
+R04: El sistema debe indicar cuando exista una competencia entre las bacterias Methanococcus Jannaschii y Halobacterium Salinarum.
 
 ## Requerimiento 5
 
-R05: El microbiologo ambiental va a poder hacer una simulacion con las bacterias registradas para crear pruebas con las mismas.
+R05: El microbiologo ambiental va a poder hacer una simulación con las bacterias registradas para crear pruebas con las mismas.
 
 ## Requerimiento 6
 
@@ -28,7 +28,7 @@ R06: El Bacteriologo únicamente podrá registrar las bacterias dependiendo de l
 
 ## Requerimeinto 7
 
-R07: Las arqeuobacterias indican la clasificacion en las que su subconjunto de bacterias estan, ademas las bacterias registradas seran Halobacterium y Methanococcus;
+R07: El sistema mostrará la clasificación de las arqueas Halobacterium Salinarum y Methanococcus Jannaschii, ambas pertenecientes al Dominio Arquea.
 
 ## Requerimeinto 8
 
@@ -36,7 +36,7 @@ R08: Se podrá  analizar la respuesta salina de la Halobacterium dependiendo del
 
 ## Requerimeinto 9
 
-R09:  Se podrá añadir los elementos necesarioa para la generación de metano por parte del Methanococcus
+R09:  Se podrá añadir los elementos necesarios para la generación de metano por parte del Methanococcus Jannaschii.
 
 ## Requerimeinto 10
 
@@ -44,8 +44,8 @@ R10: El sistema registrará si una bacteria reacciona a antibióticos, los cuale
 
 ## Requerimeinto 11
 
-R11: El sistema registrara la eficiencia en la produccion de fermentacion del lactobacilus y del streptococcus.
+R11: El sistema registrara la eficiencia en la produccion de fermentacion de Lactobacillus Acidophilus y de Streptococcus Thermophilus.
 
 ## Requerimeinto 12
 
-R12: El sistema podra registrar la actividad toxica que presente la bacteria clostridum Botulinum.
+R12: El sistema podrá registrar la actividad toxica que presenta la bacteria Clostridum Botulinum.

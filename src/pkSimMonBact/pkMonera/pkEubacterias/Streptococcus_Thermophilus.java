@@ -2,9 +2,10 @@ package pkSimMonBact.pkMonera.pkEubacterias;
 
 
 public class Streptococcus_Thermophilus extends Eubacteria {
+    
     private Double nivelAcidoLactico;
     private Double consumoAzucares;
-
+    private String tipoAzucarFermentado;
     
     public Streptococcus_Thermophilus (Double nivelAcidoLactico, Double consumoAzucares,
                                                                         String nombreCientifico, String habitat,
@@ -13,10 +14,11 @@ public class Streptococcus_Thermophilus extends Eubacteria {
                                                                         String gram, String clasificacionEubacteria, String tipoFermentacion  ){
         super("Streptococcus Thermophilus", habitat,
                     phOptimo,temperaturaOptima,
-                    esPatogeno,anaerobioStricto,esProbiotico,
+                    false ,anaerobioStricto, true,
                     gram, clasificacionEubacteria, tipoFermentacion);
         this.nivelAcidoLactico=nivelAcidoLactico;
         this.consumoAzucares =consumoAzucares;
+        this.tipoAzucarFermentado = "lactosa";
     }
 
     //Getters y Setters:
@@ -46,7 +48,7 @@ public class Streptococcus_Thermophilus extends Eubacteria {
 
     //Métodos:
     public String fermentar (String sustrato){
-        if(sustrato.equalsIgnoreCase("lactosa")){
+        if(sustrato.equalsIgnoreCase(this.tipoAzucarFermentado)){
             this.nivelAcidoLactico += 5.0;
             return "Se ha fermentado la lactosa y se ha producido ácido láctico.";
         } else {
@@ -90,5 +92,15 @@ public class Streptococcus_Thermophilus extends Eubacteria {
 
         return resultado;
 
-    } 
+    }
+    
+    @Override
+    public String ejecutarFuncionMetabolica(){
+            return this.getNombreCientifico() + " fermenta lactosa y produce ácido láctico, contribuyendo a la formación de yogur";
+    }
 }
+
+    
+
+    
+

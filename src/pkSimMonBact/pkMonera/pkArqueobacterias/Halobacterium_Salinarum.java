@@ -8,7 +8,7 @@ public class Halobacterium_Salinarum extends Arqueobacterias {
                         Double phOptimo, Double temperaturaOptima,
                         Boolean esPatogeno, Boolean anaerobioStricto
                         ,String resultadoTincioGram, String clasificacionArqueo, Double nivelSalinidadOptima) {
-        super(nombreCientifico,habitat,
+        super("Halobacterium Salinarum",habitat,
                     phOptimo,temperaturaOptima,
                     esPatogeno,anaerobioStricto, resultadoTincioGram, clasificacionArqueo);
         this.nivelSalinidadOptima = nivelSalinidadOptima;
@@ -36,14 +36,9 @@ public class Halobacterium_Salinarum extends Arqueobacterias {
         }
     }
 
-    public String compararAdaptacion(String bacteria) {
-        switch (bacteria.toLowerCase()) {
-            case "methanococcus jannaschii":
-                return "Methanococcus jannaschii se adapta mejor a condiciones anaeróbicas, " +
-                        "mientras que Halobacterium salinarum destaca en ambientes hipersalinos.";
-            default:
-                return "No hay datos suficientes para comparar con " + bacteria + ".";
-        }
+    @Override
+    public String ejecutarFuncionMetabolica(){
+        return analizarRespuestaSalina();
     }
 
 }

@@ -47,7 +47,6 @@ public abstract class Eubacteria extends ReinoMonera{
         this.tipoFermentacion = tipoFermentacion;
     }
 
-
     public Boolean reaccionarAntibiotico(String antibiotico){
     if(gram.equalsIgnoreCase("positivo") && antibiotico.equalsIgnoreCase("penicilina")){
         return false;

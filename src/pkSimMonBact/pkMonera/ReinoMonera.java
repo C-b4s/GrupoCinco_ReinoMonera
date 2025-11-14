@@ -93,16 +93,12 @@ public abstract class ReinoMonera {
             System.out.println("La temperatura óptima no puede ser nula");
     }
 
-    public String alimentarse (String comida){
-        if (comida.equalsIgnoreCase("glucosa")){
-            return nombreCientifico + "obtiene energía fermentando glucosa";
-        } else if (comida.equalsIgnoreCase("C02  y H2")){
-            return nombreCientifico + "realizar metabolismo metanogénico.";
-        } else {
-            return nombreCientifico + "no puede metabolizar " + comida + " .";
-        }
+    public String ejecutarFuncionMetabolica(){
+        return "Funcion no definida";
     }
 
     
 
 }
+
+

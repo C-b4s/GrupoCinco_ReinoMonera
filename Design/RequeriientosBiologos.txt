@@ -1,0 +1,46 @@
+//Microbiologo
+Sirve para cumplier el requerimiento 5 
+
+Método: simularProduccionMetano(Methanococcus_Jannaschii bacteria)
+Requerimiento:
+Simular la capacidad de una arqueobacteria metanógena para producir metano bajo condiciones óptimas (presencia de CO₂ y H₂), en función del ecosistema y tipo de ambiente estudiado.
+
+Método: evaluarCalidadAmbiental(double ph, double temperatura, double salinidad)
+Requerimiento:
+Evaluar parámetros físico-químicos del ambiente (pH, temperatura, salinidad) para determinar la calidad ambiental del ecosistema analizado.
+
+Método: analizarRespuestaSalinidad(Halobacterium_Salinarum bacteria)
+Requerimiento:
+Analizar cómo responde una arqueobacteria halófila a niveles de salinidad, evaluando su hábitat y salinidad óptima para validar su adaptación al ambiente salino.
+
+5. Generación de informes microbiológicos
+Método: generarInforme(ReinoMonera bacteria, Double tiempoAnalisis, String laboratorio)
+Requerimiento:
+Generar un informe técnico que documente el análisis de una bacteria del Reino Monera, incluyendo datos del analista, laboratorio, tiempo de análisis y especialidad.
+
+//Bacteriologo 
+Ayuda a cumplir llos requisitos 6 y
+
+Método: evaluarFermentacion(ReinoMonera bacteria)
+Requerimiento:
+Determinar el tipo de fermentación que realiza una bacteria, considerando su hábitat, pH y temperatura óptimos, y clasificando si es láctica o potencialmente tóxica.
+
+2. Comparar condiciones de fermentación entre especies
+Método: compararFermentacion(ReinoMonera b1, ReinoMonera b2)
+Requerimiento:
+Comparar parámetros de fermentación (pH y temperatura óptimos) entre dos bacterias para identificar cuál se adapta mejor a medios ácidos.
+
+3. Medir producción de ácido láctico
+Método: medirProduccionAcidoLactico(ReinoMonera bacteria)
+Requerimiento:
+Detectar si una bacteria produce ácido láctico, especialmente en especies como Lactobacilus acidophilus, y clasificar su capacidad fermentativa.
+
+4. Identificar bacterias patógenas
+Método: identificarPatogeno(ReinoMonera bacteria)
+Requerimiento:
+Determinar si una bacteria es patógena, con especial atención a Clostridium botulinum, y reportar si presenta toxinas activas.
+
+5. Registrar actividad tóxica en ambientes anaerobios
+Método: registrarActividadToxica(ClostridumBotulinum bacteria)
+Requerimiento:
+Registrar condiciones ambientales y niveles de toxina en bacterias anaerobias peligrosas, validando si el ambiente favorece la activación de toxinas.

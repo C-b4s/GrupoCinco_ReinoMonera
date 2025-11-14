@@ -2,6 +2,9 @@ package pkSimMonBact.pkMonera.pkArqueobacterias;
 
 public class Halobacterium_Salinarum extends Arqueobacterias {
 
+    public static final String AMARILLO = "\u001B[33m";
+    public static  final String RESET = "\u001B[0m";
+
     private Double nivelSalinidadOptima;
 
     public Halobacterium_Salinarum(String nombreCientifico, String habitat,
@@ -10,7 +13,7 @@ public class Halobacterium_Salinarum extends Arqueobacterias {
                         ,String resultadoTincioGram, String clasificacionArqueo, Double nivelSalinidadOptima) {
         super("Halobacterium Salinarum",habitat,
                     phOptimo,temperaturaOptima,
-                    esPatogeno,anaerobioStricto, resultadoTincioGram, clasificacionArqueo);
+                    false,anaerobioStricto, resultadoTincioGram, clasificacionArqueo);
         this.nivelSalinidadOptima = nivelSalinidadOptima;
     }
 
@@ -26,19 +29,20 @@ public class Halobacterium_Salinarum extends Arqueobacterias {
         }
     }
     
-    public String analizarRespuestaSalina() {
-        if (nivelSalinidadOptima <= 3.0 && nivelSalinidadOptima >= 2.0) {
-            return "Ambiente optimo para el crecimiento del Halobacterium Salinarum.";
-        } else if (nivelSalinidadOptima < 2) {
-            return "La bacteria pierde agua y afecta su metabolismo.";
-        } else {
-            return "Consume mucha energía y su metabolismo se desacelera y se desestabilizan.";
+        public String analizarRespuestaSalina() {
+            if (nivelSalinidadOptima <= 3.0 && nivelSalinidadOptima >= 2.0) {
+                return "Ambiente optimo para el crecimiento del Halobacterium Salinarum.";
+            } else if (nivelSalinidadOptima < 2) {
+                return "La bacteria pierde agua y afecta su metabolismo.";
+            } else {
+                return "Consume mucha energía y su metabolismo se desacelera y se desestabilizan.";
+            }
         }
-    }
 
-    @Override
-    public String ejecutarFuncionMetabolica(){
-        return analizarRespuestaSalina();
-    }
+        @Override
+        public String ejecutarFuncionMetabolica(){
+            System.out.println(AMARILLO + "\nRespuesta salina del Halobacterium Salinarum: " + RESET);
+            return analizarRespuestaSalina();
+        }
 
 }

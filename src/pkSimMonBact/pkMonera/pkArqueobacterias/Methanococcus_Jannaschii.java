@@ -3,16 +3,20 @@ package pkSimMonBact.pkMonera.pkArqueobacterias;
 public class Methanococcus_Jannaschii extends Arqueobacterias {
     
     private Double nivelMetanoProducido;
+    private double nivelCO2;
+    private double nivelH2;
 
     public Methanococcus_Jannaschii(String nombreCientifico, String habitat,
                         Double phOptimo, Double temperaturaOptima,
                         Boolean esPatogeno, Boolean anaerobioStricto,String resultadoTincioGram,
-                        String clasificacionArqueo, Double nivelMetanoProducido) {
+                        String clasificacionArqueo, Double nivelMetanoProducido, double nivelCO2, double nivelH2) {
         
         super("Methanococcus Jannaschii",habitat,
                     phOptimo,temperaturaOptima,
-                    esPatogeno,anaerobioStricto, resultadoTincioGram, clasificacionArqueo);
+                    false,anaerobioStricto, resultadoTincioGram, clasificacionArqueo);
         this.nivelMetanoProducido = nivelMetanoProducido;
+        this.nivelCO2 = 0.0;
+        this.nivelH2 = 0.0;
     }
 
     public Double getNivelMetanoProducido() {
@@ -51,11 +55,36 @@ public class Methanococcus_Jannaschii extends Arqueobacterias {
         return this.adaptarseCondicionesAnaerobicas();
     }
 
-    @Override
-    public String ejecutarFuncionMetabolica(){
-        return "Realiza metabolismo metanogénico y produce metano";
+    public void suministrarReactivos(boolean co2, boolean h2) {
+    this.tieneCO2 = co2;
+    this.tieneH2 = h2;
+}
+
+
+@Override
+public String ejecutarFuncionMetabolica() {
+
+    if (tieneCO2 && tieneH2) {
+        return getNombreCientifico() 
+            + " produce metano utilizando CO₂ y H₂ (metanogénesis).";
     }
 
+    if (!tieneCO2 && !tieneH2) {
+        return getNombreCientifico()
+            + " no puede realizar metanogénesis: faltan CO₂ y H₂.";
+    }
+
+    if (!tieneCO2) {
+        return getNombreCientifico()
+            + " no puede realizar metanogénesis porque falta CO₂.";
+    }
+
+    return getNombreCientifico()
+        + " no puede realizar metanogénesis porque falta H₂.";
 }
+
+}
+
+
 
     

@@ -26,26 +26,14 @@ R05: El microbiologo ambiental va a poder hacer una simulación con las bacteria
 
 R06: El Bacteriologo únicamente podrá registrar las bacterias dependiendo de la clasificacion asignada, los dos deben tener un login y contraseña distinta.
 
-## Requerimeinto 7
+## Requerimiento 7
 
 R07: El sistema mostrará la clasificación de las arqueas Halobacterium Salinarum y Methanococcus Jannaschii, ambas pertenecientes al Dominio Arquea.
 
-## Requerimeinto 8
+## Requerimiento 8
 
-R08: Se podrá  analizar la respuesta salina de la Halobacterium dependiendo del nivel de salinidad registrado por el bacteriólogo.
+R08: Se podrá analizar la respuesta salina de la Halobacterium dependiendo del nivel de salinidad registrado por el bacteriólogo.
 
-## Requerimeinto 9
+## Requerimiento 9
 
 R09:  Se podrá añadir los elementos necesarios para la generación de metano por parte del Methanococcus Jannaschii.
-
-## Requerimeinto 10
-
-R10: El sistema registrará si una bacteria reacciona a antibióticos, los cuales serán registrados por el bacteriólogo.
-
-## Requerimeinto 11
-
-R11: El sistema registrara la eficiencia en la produccion de fermentacion de Lactobacillus Acidophilus y de Streptococcus Thermophilus.
-
-## Requerimeinto 12
-
-R12: El sistema podrá registrar la actividad toxica que presenta la bacteria Clostridum Botulinum.

@@ -1,6 +1,10 @@
 package pkSimMonBact.pkMonera.pkEubacterias;
 
 public class ClostridumBotulinum extends Eubacteria{
+
+ public static  final String ROJO = "\u001B[31m";
+   public static  final String RESET = "\u001B[0m";
+    
     // Atributos  
     private boolean          toxinaActiva;
     private boolean          ambienteSinOxigeno;
@@ -35,10 +39,10 @@ public class ClostridumBotulinum extends Eubacteria{
                         Boolean esPatogeno, Boolean anaerobioStricto, Boolean esProbiotico,
                         String gram, String clasificacionEubacteria, String tipoFermentacion ,
                         boolean toxinaActiva, boolean ambienteSinOxigeno, double nivelToxina) {
-        super(nombreCientifico, habitat,
+        super("Clostridum Botulinum", habitat,
                     phOptimo,temperaturaOptima,
-                    esPatogeno,anaerobioStricto,esProbiotico,
-                    gram, clasificacionEubacteria, tipoFermentacion);
+                    false, anaerobioStricto, false,
+                    "positivo", clasificacionEubacteria, tipoFermentacion);
         this.toxinaActiva = true;
         this.ambienteSinOxigeno = true;
         this.nivelToxina = 75.3;
@@ -83,6 +87,12 @@ public class ClostridumBotulinum extends Eubacteria{
         toxinaActiva = false;
         nivelToxina = 0;
         System.out.println("La toxina ha sido desactivada.");
+    }
+
+    @Override
+    public String ejecutarFuncionMetabolica(){
+        if (ambienteSinOxigeno) return "Produce toxina botulínica en ambientes anaerobios";
+        else return ROJO + "Dado que el ambiente no es anaerobio, no se ha producido toxina botulinica" + RESET;
     }
 
 }

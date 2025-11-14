@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="LRWsTsSMR2jhR3WM2DBk" name="Page-1">
-        <mxGraphModel dx="1792" dy="563" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1552" dy="563" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -205,7 +205,7 @@
                 <mxCell id="238" value="+compararFermentacion&lt;br&gt;(otraBacteria:String):String" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="75" vertex="1">
                     <mxGeometry y="114" width="200" height="42" as="geometry"/>
                 </mxCell>
-                <mxCell id="309" value="+ejecutarFuncionMetabolica&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;():&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;String&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=#007FFF;fillColor=#CCE5FF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="75">
+                <mxCell id="309" value="+ejecutarFuncionMetabolica&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;():&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;String&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=#007FFF;fillColor=#CCE5FF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="75" vertex="1">
                     <mxGeometry y="156" width="200" height="38" as="geometry"/>
                 </mxCell>
                 <mxCell id="85" value="Clostridium botulinum" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
@@ -235,7 +235,7 @@
                 <mxCell id="265" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;+desactivarToxina(): Void&lt;/span&gt;" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="85" vertex="1">
                     <mxGeometry y="234" width="170" height="26" as="geometry"/>
                 </mxCell>
-                <mxCell id="305" value="+ejecutarFuncionMetabolica&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;():&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;String&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=#007FFF;fillColor=#CCE5FF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="85">
+                <mxCell id="305" value="+ejecutarFuncionMetabolica&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;():&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;String&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=#007FFF;fillColor=#CCE5FF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="85" vertex="1">
                     <mxGeometry y="260" width="170" height="38" as="geometry"/>
                 </mxCell>
                 <mxCell id="105" value="Lactobacillus acidophilus" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
@@ -259,26 +259,32 @@
                 <mxCell id="235" value="+fermentar(sustrato:String): String" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="105" vertex="1">
                     <mxGeometry y="170" width="180" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="306" value="+ejecutarFuncionMetabolica&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;():&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;String&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=#66B2FF;fillColor=#CCE5FF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="105">
+                <mxCell id="306" value="+ejecutarFuncionMetabolica&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;():&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;String&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=#66B2FF;fillColor=#CCE5FF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="105" vertex="1">
                     <mxGeometry y="210" width="180" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="125" value="Methanococcus&amp;nbsp;jannaschii" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
-                    <mxGeometry x="1590" y="760" width="190" height="210" as="geometry"/>
+                    <mxGeometry x="1590" y="760" width="190" height="300" as="geometry"/>
                 </mxCell>
-                <mxCell id="126" value="-nivelMetanoProducido:&lt;br&gt;Double" style="text;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="125" vertex="1">
+                <mxCell id="312" value="-nivelC02:double" style="text;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="125">
                     <mxGeometry y="30" width="190" height="40" as="geometry"/>
                 </mxCell>
+                <mxCell id="311" value="-nivelH2:Double" style="text;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="125">
+                    <mxGeometry y="70" width="190" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="126" value="-nivelMetanoProducido:&lt;br&gt;Double" style="text;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="125" vertex="1">
+                    <mxGeometry y="110" width="190" height="40" as="geometry"/>
+                </mxCell>
                 <mxCell id="128" value="" style="line;strokeWidth=1;fillColor=#f8cecc;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#b85450;" parent="125" vertex="1">
-                    <mxGeometry y="70" width="190" height="8" as="geometry"/>
+                    <mxGeometry y="150" width="190" height="8" as="geometry"/>
                 </mxCell>
                 <mxCell id="129" value="+generarMetano(hayCO2:&lt;br&gt;Boolean, hayH2:Boolean):&lt;br&gt;Boolean" style="text;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="125" vertex="1">
-                    <mxGeometry y="78" width="190" height="52" as="geometry"/>
+                    <mxGeometry y="158" width="190" height="52" as="geometry"/>
                 </mxCell>
                 <mxCell id="249" value="+compararResistenciaAnaerobia&lt;br&gt;(bacteria:String):String" style="text;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="125" vertex="1">
-                    <mxGeometry y="130" width="190" height="40" as="geometry"/>
+                    <mxGeometry y="210" width="190" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="307" value="+ejecutarFuncionMetabolica&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;():&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;String&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=#660000;fillColor=#FFCCCC;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="125">
-                    <mxGeometry y="170" width="190" height="40" as="geometry"/>
+                <mxCell id="313" value="+ejecutarFuncionMetabolica&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;():&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;String&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="125">
+                    <mxGeometry y="250" width="190" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="145" value="&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;Halobacterium&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#000000&quot;&gt;salinarum&lt;/font&gt;&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=36;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
                     <mxGeometry x="1860" y="760" width="170" height="190" as="geometry"/>
@@ -295,7 +301,7 @@
                 <mxCell id="255" value="+compararAdaptacion&lt;br&gt;(bacteria:String):String" style="text;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="145" vertex="1">
                     <mxGeometry y="110" width="170" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="308" value="+ejecutarFuncionMetabolica&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;():&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;String&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=#660000;fillColor=#FFCCCC;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="145">
+                <mxCell id="308" value="+ejecutarFuncionMetabolica&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;():&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;String&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=#660000;fillColor=#FFCCCC;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="145" vertex="1">
                     <mxGeometry y="150" width="170" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="154" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;exitX=0.437;exitY=-0.002;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" source="145" target="50" edge="1">

@@ -49,3 +49,16 @@ R11: El sistema registrara la eficiencia en la produccion de fermentacion de Lac
 ## Requerimeinto 12
 
 R12: El sistema podrá registrar la actividad toxica que presenta la bacteria Clostridum Botulinum.
+
+
+## Requerimiento 13
+R13: El sistema debe permitir que Clostridium botulinum active su metabolismo anaeróbico al detectar ácido láctico producido por una instancia de Lactobacilus_Acidophilus.
+- activarPorLactobacillus(Lactobacilus_Acidophilus Lactobacilus): String
+
+## Requerimiento 14
+El sistema debe simular una competencia por recursos entre Clostridium botulinum, Lactobacilus_Acidophilus y Streptococcus_Thermophilus, generando una descripción textual de la interacción.
+- competirConDosBacterias(Lactobacilus_Acidophilus lacto, Streptococcus_Thermophilus strepto): String
+
+## Requerimiento 15
+El sistema debe evaluar si la toxina botulínica de Clostridium botulinum inhibe el crecimiento de otra bacteria, dependiendo del tipo de bacteria y del estado de activación de la toxina.
+- inhibirBacteria(Eubacteria bacteria, Float crecimiento): String

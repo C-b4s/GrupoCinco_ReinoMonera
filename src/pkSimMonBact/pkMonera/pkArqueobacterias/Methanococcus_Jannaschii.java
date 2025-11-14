@@ -27,6 +27,14 @@ public class Methanococcus_Jannaschii extends Arqueobacterias {
         this.nivelMetanoProducido = nivelMetanoProducido;
     }
 
+    public void setNivelCO2(double nivelCO2) {
+        this.nivelCO2 = nivelCO2;
+    }
+
+    public void setNivelH2(double nivelH2) {
+        this.nivelH2 = nivelH2;
+    }
+
     public Boolean generarMetano(Boolean hayCO2, Boolean hayH2) {
 
         if (hayCO2 && hayH2) {
@@ -55,35 +63,20 @@ public class Methanococcus_Jannaschii extends Arqueobacterias {
         return this.adaptarseCondicionesAnaerobicas();
     }
 
-    public void suministrarReactivos(boolean co2, boolean h2) {
-    this.tieneCO2 = co2;
-    this.tieneH2 = h2;
-}
-
-
 @Override
 public String ejecutarFuncionMetabolica() {
 
-    if (tieneCO2 && tieneH2) {
-        return getNombreCientifico() 
-            + " produce metano utilizando CO₂ y H₂ (metanogénesis).";
+    if (nivelCO2 > 0 && nivelH2 > 0) {
+        return "El Methanococcus Jannaschii produjo metano.\n"
+             + "   CO₂ usado: " + nivelCO2 + "\n"
+             + "   H₂ usado: " + nivelH2 + "\n";
+    } else {
+        return "No es posible generar metano. Se requieren niveles de CO₂ y H₂.";
     }
-
-    if (!tieneCO2 && !tieneH2) {
-        return getNombreCientifico()
-            + " no puede realizar metanogénesis: faltan CO₂ y H₂.";
-    }
-
-    if (!tieneCO2) {
-        return getNombreCientifico()
-            + " no puede realizar metanogénesis porque falta CO₂.";
-    }
-
-    return getNombreCientifico()
-        + " no puede realizar metanogénesis porque falta H₂.";
+}
 }
 
-}
+
 
 
 

@@ -23,14 +23,14 @@ public abstract class Biologo {
     }
 
     public String getNombre() {
-        if (nombre == null || nombre.trim().isEmpty()) {
+        if (nombre == null || nombre.isEmpty()) {
             System.out.println(" Advertencia: Nombre no asignado.");
         }
         return nombre;
     }
 
     public String getApellido() {
-        if (apellido == null || apellido.trim().isEmpty()) {
+        if (apellido == null || apellido.isEmpty()) {
             System.out.println(" Advertencia: Apellido no asignado.");
         }
         return apellido;
@@ -44,14 +44,14 @@ public abstract class Biologo {
     }
 
     public String getCampoEspecialidad() {
-        if (campoEspecialidad == null || campoEspecialidad.trim().isEmpty()) {
+        if (campoEspecialidad == null || campoEspecialidad.isEmpty()) {
             System.out.println(" Advertencia: Campo de especialidad no definido.");
         }
         return campoEspecialidad;
     }
 
     public String getLaboratorioAsignado() {
-        if (laboratorioAsignado == null || laboratorioAsignado.trim().isEmpty()) {
+        if (laboratorioAsignado == null || laboratorioAsignado.isEmpty()) {
             System.out.println(" Advertencia: Laboratorio no asignado.");
         }
         return laboratorioAsignado;
@@ -66,18 +66,18 @@ public abstract class Biologo {
     }
 
     public void setNombre(String nombre) {
-        if (nombre == null || nombre.trim().isEmpty()) {
+        if (nombre == null || nombre.isEmpty()) {
             System.out.println(" Error: El nombre no puede estar vacío.");
         } else {
-            this.nombre = nombre.trim();
+            this.nombre = nombre;
         }
     }
 
     public void setApellido(String apellido) {
-        if (apellido == null || apellido.trim().isEmpty()) {
+        if (apellido == null || apellido.isEmpty()) {
             System.out.println(" Error: El apellido no puede estar vacío.");
         } else {
-            this.apellido = apellido.trim();
+            this.apellido = apellido;
         }
     }
 
@@ -90,18 +90,18 @@ public abstract class Biologo {
     }
 
     public void setCampoEspecialidad(String campoEspecialidad) {
-        if (campoEspecialidad == null || campoEspecialidad.trim().isEmpty()) {
+        if (campoEspecialidad == null || campoEspecialidad.isEmpty()) {
             System.out.println(" Error: El campo de especialidad no puede estar vacío.");
         } else {
-            this.campoEspecialidad = campoEspecialidad.trim();
+            this.campoEspecialidad = campoEspecialidad;
         }
     }
 
     public void setLaboratorioAsignado(String laboratorioAsignado) {
-        if (laboratorioAsignado == null || laboratorioAsignado.trim().isEmpty()) {
+        if (laboratorioAsignado == null || laboratorioAsignado.isEmpty()) {
             System.out.println(" Error: El laboratorio asignado no puede estar vacío.");
         } else {
-            this.laboratorioAsignado = laboratorioAsignado.trim();
+            this.laboratorioAsignado = laboratorioAsignado;
         }
     }
 
